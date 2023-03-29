@@ -40,20 +40,20 @@ Steps on how to install and run the project are descriped with steps in the [Ins
 
 ## Authors and acknowledgment
 
-The teacher: [Fancisco Gomes](https://git.chalmers.se/francisco.gomes)
+The Professor: [Francisco Gomes](https://git.chalmers.se/francisco.gomes)
 
 The TAs:
-- - [ ] [Luiz Rosane](https://git.chalmers.se/philippi)
-- - [ ] [Nicole Quinstedt](https://git.chalmers.se/nicolean)
+-   [Luiz Rosane](https://git.chalmers.se/philippi)
+-   [Nicole Quinstedt](https://git.chalmers.se/nicolean)
 
 Our valuable members: 
-- - [ ] [Nawras Kanjo](https://git.chalmers.se/nawrask)
-- - [ ] [Qutaiba Adnan](https://git.chalmers.se/qutaiba)
-- - [ ] [M.Ali Elhasan](https://git.chalmers.se/elhasan)
-- - [ ] [Yousef Abbas](https://git.chalmers.se/yousefab)
-- - [ ] [Muhmmad Aslan](https://git.chalmers.se/muhmmad)
-- - [ ] [Josef Abdurahim Al-Masri](https://git.chalmers.se/josefab)
+-   [Nawras Kanjo](https://git.chalmers.se/nawrask)
+-   [Qutaiba Adnan](https://git.chalmers.se/qutaiba)
+-   [M.Ali Elhasan](https://git.chalmers.se/elhasan)
+-   [Yousef Abbas](https://git.chalmers.se/yousefab)
+-   [Muhmmad Aslan](https://git.chalmers.se/muhmmad)
+-   [Josef Abdurahim Al-Masri](https://git.chalmers.se/josefab)
 
 
 ## License
-Open source, donation are very welcome..... we are poor students.
+Open source.
