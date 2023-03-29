@@ -4,7 +4,7 @@
 This project is about using Wio Terminal (arduino-based device) to moniter the environment during our sleep. The sensors will gather temprature, humidity, light and noise level data throughout the entire night to give a score at the end. This score determense how good of a sleep quality you had when you wake up. The log data will be saved either on the web or on a mobile application. The code for that program will be included here as well. 
 
 ## Visuals
-screenshots and giffs will be implemented here
+Screenshots and GIFs will be implemented here
 
 ## Installation
 To run the exact same system you will need a Wio Terminal and an Andriod phone or a computer (haven't decided yet on what platform the program will be made for). 
@@ -29,7 +29,7 @@ When the above date is passed, the work on this project will stop, ending the su
 
 ## Contributing
 Contributions to this project are more than welcome, the project is and will remain open source with the aim for future improvements for the enthusiast. We (the creators) will not push any further versions. Thus, we are leaving the project in your creativity playground for development. 
-Steps on how to install and run the project are descriped with steps in the [Installation](#I)
+Steps on how to install and run the project are descriped with steps in the [Installation](##Installation)
 
 ## Authors and acknowledgment
 
