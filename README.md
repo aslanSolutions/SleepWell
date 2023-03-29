@@ -21,7 +21,7 @@ To run the exact same system you will need a Wio Terminal and an Andriod phone o
 
  
 ## Usage
-
+Coming soon......
 
 ## Support
 Support for this project will remain untill 25-5-2023. During this period you can contact any of the member creators (not the Teacher nor the TAs) and we will gladly help. 
