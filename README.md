@@ -8,23 +8,17 @@ screenshots and giffs will be implemented here
 
 ## Installation
 To run the exact same system you will need a Wio Terminal and an Andriod phone or a computer (haven't decided yet on what platform the program will be made for). 
-1. 
-Then you need the following sensors: 
+
+1. Then you need the following sensors: 
   - - x1
   - - x2 
   - - x3
 
-2. 
-Now that all the hardware is here, you will need to install [Arduino IDE](https://www.arduino.cc/en/software) and implement the Wio Terminal Library inside the Arduino IDE. This can be done by going File > Preferences, then paste this [URL](https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json) to Additional Boards Manager. 
-3. 
-Now you need to select and install the Wio Terminal board by Tools > Board > Board Manager and Search Wio Terminal. 
-4. 
-Once that is done, you can now select the board from the board list and cope/paste the arduino code in this project. 
-5. 
-All that is left now is to verify and upload the code to your Wio Terminal. 
-
-6. 
-When it comes to the Andriod App or computer web-based program, we have no idea yet.....
+2. Now that all the hardware is here, you will need to install [Arduino IDE](https://www.arduino.cc/en/software) and implement the Wio Terminal Library inside the Arduino IDE. This can be done by going File > Preferences, then paste this [URL](https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json) to Additional Boards Manager. 
+3. Now you need to select and install the Wio Terminal board by Tools > Board > Board Manager and Search Wio Terminal. 
+4. Once that is done, you can now select the board from the board list and cope/paste the arduino code in this project. 
+5. All that is left now is to verify and upload the code to your Wio Terminal. 
+6. When it comes to the Andriod App or computer web-based program, we have no idea yet.....
 
  
 ## Usage
