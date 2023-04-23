@@ -85,16 +85,19 @@ void loop() {
     The conuter is gonig to increase every time to write the value which measured from the sensor humidity
     */
     //Implement it here
+
+    humidity_median += humidity_array[i];
   }
 
   
   light_avarage = //TODO: Find the way to calculate the avarage of the light values
   sound_avarage = //TODO: Find the way to calculate the avarage of the loudness values
   temperature_avarage = //TODO: Find the way to calculate the avarage of the temperature values
-  humidity_avarage = //TODO: Find the way to calculate the avarage of the humidity values
+  humidity_median = humidity_median / counter;
+
 
  
-  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_avarage) + " sound " + String(sound_avarage) + " temperature " + String(temperature_avarage) + " humidity " + String(humidity_avarage));
+  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_avarage) + " sound " + String(sound_avarage) + " temperature " + String(temperature_avarage) + " humidity " + String(humidity_median));
   Serial.println();
 
   //Here to increase the value of the counter every time, it is increasing by 1
