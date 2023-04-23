@@ -63,22 +63,25 @@ void loop() {
     //For all the task!! There is already variables which you have to use while imlpementing the each task
     
     //TODO Light 
+    light_median += light_array[i];
+
     /*
     The conuter is gonig to increase every time to write the value which measured from the light sensor
     */
-    //Implement it here 
-    
+    //Implement it here
+
     //TODO loudness
     /*
     The conuter is gonig to increase every time to write the value which measured from the sensor loudness
     */
     //Implement it here
-    
+
     //TODO Temperature
     /*
     The conuter is gonig to increase every time to write the value which measured from the sensor temperature
     */
-    //Implement it here,
+        temperature_median += temperature_array[i];
+
 
     //TODO Humidity
     /*
@@ -87,14 +90,15 @@ void loop() {
     //Implement it here
   }
 
-  
-  light_avarage = //TODO: Find the way to calculate the avarage of the light values
+
+  light_median = light_median / counter;
   sound_avarage = //TODO: Find the way to calculate the avarage of the loudness values
-  temperature_avarage = //TODO: Find the way to calculate the avarage of the temperature values
+
+  temperature_median = temperature_median / counter;
   humidity_avarage = //TODO: Find the way to calculate the avarage of the humidity values
 
- 
-  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_avarage) + " sound " + String(sound_avarage) + " temperature " + String(temperature_avarage) + " humidity " + String(humidity_avarage));
+
+  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_median) + " sound " + String(sound_avarage) + " temperature " + String(temperature_median) + " humidity " + String(humidity_avarage));
   Serial.println();
 
   //Here to increase the value of the counter every time, it is increasing by 1
