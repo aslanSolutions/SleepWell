@@ -95,12 +95,12 @@ void loop() {
 
   light_median = light_median / counter;
   sound_avarage = //TODO: Find the way to calculate the avarage of the loudness values
-  temperature_avarage = //TODO: Find the way to calculate the avarage of the temperature values
+  temperature_median = temperature_median / counter;
   humidity_median = humidity_median / counter;
 
 
  
-  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_avarage) + " sound " + String(sound_avarage) + " temperature " + String(temperature_avarage) + " humidity " + String(humidity_median));
+  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_avarage) + " sound " + String(sound_avarage) + " temperature " + String(temperature_median) + " humidity " + String(humidity_median));
   Serial.println();
 
   //Here to increase the value of the counter every time, it is increasing by 1
