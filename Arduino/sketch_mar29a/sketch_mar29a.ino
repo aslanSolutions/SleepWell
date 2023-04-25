@@ -63,6 +63,8 @@ void loop() {
     //For all the task!! There is already variables which you have to use while imlpementing the each task
     
     //TODO Light 
+    light_median += light_array[i];
+
     /*
     The conuter is gonig to increase every time to write the value which measured from the light sensor
     */
@@ -73,13 +75,16 @@ void loop() {
     /*
     The conuter is gonig to increase every time to write the value which measured from the sensor temperature
     */
-    //Implement it here,
+        temperature_median += temperature_array[i];
+
 
     //TODO Humidity
     /*
     The conuter is gonig to increase every time to write the value which measured from the sensor humidity
     */
     //Implement it here
+
+    humidity_median += humidity_array[i];
   }
 
   
