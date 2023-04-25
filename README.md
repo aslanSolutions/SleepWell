@@ -3,40 +3,20 @@
 ## Introducation
 Welcome to our project, which is focused on using the Wio Terminal, an Arduino-based device, to monitor the environment during sleep. Our aim is to provide users with a comprehensive understanding of their sleep quality by gathering data on temperature, humidity, light, and noise levels throughout the night. At the end of each night, the collected data is analyzed and assigned a score, indicating the quality of the user's sleep. We plan to save this data on a mobile application for easy access and further analysis. Here, you will find the code for the program, as well as any additional information related to the project.
 
-## Instructions
+## Instruction
 
 ### Installation
 
-To install the project from the repository, as user for this project, you need to have some specific requirement like;
-1. You should setup both of Arduino and Flutter framework. 
- - -  You can install and setup Arduino IDE from the official website, [Click here](https://www.arduino.cc/en/software)
- - -  Flutter framework, can be downloaded by the official Flutter website, [Click here](https://docs.flutter.dev/get-started/install)
-2. You should have the Wio Seeed Terminal to upload the code on it by using Arduino IDE, and there is going to be several sensors with the terminal you can connect;
- a. External Sensor:
-    - - Tempereture & Humidity Sensor
-    - - Loudness Sensor
- b. Internal Sensors:
-    - - Light Sensor
+Here are steps to install the project: 
+1. You should setup both of Arduino and Flutter framework. (Page is coming)
+2. To upload code to the Wio Seeed Terminal using Arduino IDE, it is necessary to have the terminal device. Additionally, there will be several sensors connected to the terminal that can be used.(Page is coming)
+3. Git must be installed on the device before using GitLab.(Page is coming)
+4. It is required to clone the repository to work on it. (Page is coming)
+5. The project requires the use of MQTT protocol, and the developers have used mosquitto for this purpose.(Page is coming)
 
-
-- [ ] 
-Then you need the following sensors: 
- - - [ ] x1
- - - [ ] x2 
- - - [ ] x3
-
-- [ ] 
-Now that all the hardware is here, you will need to install [Arduino IDE](https://www.arduino.cc/en/software) and implement the Wio Terminal Library inside the Arduino IDE. This can be done by going File > Preferences, then paste this [URL](https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json) to Additional Boards Manager. 
-- [ ] 
-Now you need to select and install the Wio Terminal board by Tools > Board > Board Manager and Search Wio Terminal. 
-- [ ] 
-Once that is done, you can now select the board from the board list and cope/paste the arduino code in this project. 
-- [ ] 
-All that is left now is to verify and upload the code to your Wio Terminal. 
-
-- [ ] 
-When it comes to the Andriod App or computer web-based program, we have no idea yet.....
-
+### Configuration
+1. To run Wio terminal on Arduino IDE, certain libraries are necessary.
+2. To run the project, it is necessary to download and set up the Flutter SDK. There are different IDE choices available for running Dart code.
  
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
