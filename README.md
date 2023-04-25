@@ -8,15 +8,15 @@ Welcome to our project, which is focused on using the Wio Terminal, an Arduino-b
 ### Installation
 
 To install the project from the repository, as user for this project, you need to have some specific requirement like;
-- [ ] You should setup both of Arduino and Flutter framework. 
- - - [ ] You can install and setup Arduino IDE from the official website, [Click here](https://www.arduino.cc/en/software)
- - - [ ] Flutter framework, can be downloaded by the official Flutter website, [Click here](https://docs.flutter.dev/get-started/install)
-- [ ] You should have the Wio Seeed Terminal to upload the code on it by using Arduino IDE, and there is going to be several sensors with the terminal you can connect;
- - [ ] External Sensor:
-    - - [ ] Tempereture & Humidity Sensor
-    - - [ ] Loudness Sensor
- - [ ] Internal Sensors:
-    - - [ ] Light Sensor
+1. You should setup both of Arduino and Flutter framework. 
+ - -  You can install and setup Arduino IDE from the official website, [Click here](https://www.arduino.cc/en/software)
+ - -  Flutter framework, can be downloaded by the official Flutter website, [Click here](https://docs.flutter.dev/get-started/install)
+2. You should have the Wio Seeed Terminal to upload the code on it by using Arduino IDE, and there is going to be several sensors with the terminal you can connect;
+ a. External Sensor:
+    - - Tempereture & Humidity Sensor
+    - - Loudness Sensor
+ b. Internal Sensors:
+    - - Light Sensor
 
 
 - [ ] 
