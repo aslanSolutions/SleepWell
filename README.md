@@ -58,12 +58,11 @@ https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Instructi
 
 To install and run this project, follow these steps:
 
-1) To install and run this project, follow these steps:
-2) Install Arduino IDE and the necessary libraries.
-3) Install the Flutter SDK and an IDE of your choice.
-4) Connect the Wio Seeed Terminal and sensors.
-5) Clone the repository.
-6) Install Mosquitto.
+1) Install Arduino IDE and the necessary libraries.
+2) Install the Flutter SDK and an IDE of your choice.
+3) Connect the Wio Seeed Terminal and sensors.
+4) Clone the repository.
+5) Install Mosquitto.
 ```
 
 
