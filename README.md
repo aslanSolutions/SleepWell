@@ -36,6 +36,8 @@
 Our project aims to leverage the Wio Terminal, an Arduino-based device, to monitor sleep environments and provide users with valuable insights into their sleep quality. By collecting data on temperature, humidity, light, and noise levels throughout the night, our project enables users to gain a comprehensive understanding of their sleep patterns. The collected data is analyzed and presented to users through a simple score, indicating the quality of their sleep. By providing easy access to this information via a mobile application, our project empowers users to make informed decisions about their sleep habits and improve their overall sleep quality.
 
 
+## Usage <a name = "usage"></a>
+As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -63,6 +65,17 @@ To install and run this project, follow these steps:
 3) Connect the Wio Seeed Terminal and sensors.
 4) Clone the repository.
 5) Install Mosquitto.
-```
+
+
+## Acknowledgement <a name = "acknowledgement"></a>
+We want to give a shout-out to everyone who helped us out with this project! First off, a huge thank you to our amazing proffessor and his loyal TAs, Francisco Gomes, Luiz Rosane and Nicole Quinstedt, for being there every step of the way with their awesome advice and encouragement. We couldn't have done it without you! Also, big ups to all of our classmates and friends who gave us feedback and support along the way. You guys are the best! And finally, a special thanks to Göteborg's univercity for hooking us up with the cash to make this happen. We appreciate your support more than you know. Last but not least, our group members with all the hard work they did during the course period.
+Thanks again, everyone!
+
+
+## Authors <a name = "authors"></a>
+Information about our amazing team and the team contract can be found <a href= "https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Team"> here</a>
+
+
+
 
 
