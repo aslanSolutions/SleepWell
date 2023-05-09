@@ -1,7 +1,6 @@
-import 'package:adv/home_screen.dart';
+import './home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:adv/second_screen.dart';
-import 'package:adv/score_screen.dart';
+import './second_screen.dart';
 
 //This class handles switching screen and rendring the new UI when a new screen is displayed
 class ScreenController extends StatefulWidget {
@@ -31,11 +30,7 @@ class _ScreenControllerState extends State<ScreenController> {
   }
 
   // Switch to the score screen
-  void goBack() {
-    setState(() {
-      activeScreen = ScoreScreen(switchScreen);
-    });
-  }
+  void goBack() {}
 
   // The main layout of the application (Background colors),
   // Should force all loaded screen to have this layout.
@@ -58,16 +53,3 @@ class _ScreenControllerState extends State<ScreenController> {
     );
   }
 }
- 
- 
-/*
-gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 53, 109, 137),
-                Color.fromARGB(255, 3, 77, 85)
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-*/

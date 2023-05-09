@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'package:adv/clock_widget.dart';
-import 'package:adv/log_screen.dart';
-import 'package:adv/progress_circle.dart';
-import 'package:adv/sleep_screen.dart';
+import './clock_widget.dart';
+import './log_screen.dart';
+import './progress_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';

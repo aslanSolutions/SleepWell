@@ -1,5 +1,5 @@
-import 'package:adv/log_screen_controller.dart';
-import 'package:adv/values.dart';
+import './log_screen_controller.dart';
+import './values.dart';
 import 'package:flutter/material.dart';
 
 class LogScreen extends StatelessWidget {
@@ -16,7 +16,6 @@ class LogScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(child: LogScreenController(values)),
-          Expanded(child: LogScreen2(values)),
         ],
       ),
     );
