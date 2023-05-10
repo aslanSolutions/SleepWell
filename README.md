@@ -1,59 +1,81 @@
-# Sleep Well
+<p align="center">
+  <a href="" rel="noopener">
+ <img style = "display:block;margin-left:auto; margin-right:auto; " src="https://i.imgur.com/kKbslht.jpg" alt="Project logo"></a>
+</p>
 
-## Description
-This project is about using Wio Terminal (arduino-based device) to moniter the environment during our sleep. The sensors will gather temprature, humidity, light and noise level data throughout the entire night to give a score at the end. This score determense how good of a sleep quality you had when you wake up. The log data will be saved either on the web or on a mobile application. The code for that program will be included here as well. 
+<h3 align="center">Sleep Well</h3>
 
-## Visuals
-screenshots and giffs will be implemented here
+<div align="center">
 
-## Installation
-To run the exact same system you will need a Wio Terminal and an Andriod phone or a computer (haven't decided yet on what platform the program will be made for). 
-- [ ] 
-Then you need the following sensors: 
- - - [ ] x1
- - - [ ] x2 
- - - [ ] x3
-
-- [ ] 
-Now that all the hardware is here, you will need to install [Arduino IDE](https://www.arduino.cc/en/software) and implement the Wio Terminal Library inside the Arduino IDE. This can be done by going File > Preferences, then paste this [URL](https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json) to Additional Boards Manager. 
-- [ ] 
-Now you need to select and install the Wio Terminal board by Tools > Board > Board Manager and Search Wio Terminal. 
-- [ ] 
-Once that is done, you can now select the board from the board list and cope/paste the arduino code in this project. 
-- [ ] 
-All that is left now is to verify and upload the code to your Wio Terminal. 
-
-- [ ] 
-When it comes to the Andriod App or computer web-based program, we have no idea yet.....
-
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/branches)
  
-## Usage
+</div>
+
+---
+
+<p align="center"> The Sleep Well project use the Wio Terminal to monitor the sleep environment and provide users with an estimate of how well they slept. Throughout the night, it collects data on temperature, humidity, light, and noise levels and assigns a score to sleep quality. 
 
 
-## Support
-Support for this project will remain untill 25-5-2023. During this period you can contact any of the member creators (not the Teacher nor the TAs) and we will gladly help. 
-When the above date is passed, the work on this project will stop, ending the support for it as well. 
 
-## Contributing
-Contributions to this project are more than welcome, the project is and will remain open source with the aim for future improvements for the enthusiast. We (the creators) will not push any further versions. Thus, we are leaving the project in your creativity playground for development. 
-Steps on how to install and run the project are descriped with steps in the [Installation](#-Installation)
+</p>
 
-## Authors and acknowledgment
+## 📝 Table of Contents
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [TODO](../TODO.md)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-The teacher: [Fancisco Gomes](https://git.chalmers.se/francisco.gomes)
-
-The TAs:
-- - [ ] [Luiz Rosane](https://git.chalmers.se/philippi)
-- - [ ] [Nicole Quinstedt](https://git.chalmers.se/nicolean)
-
-Our valuable members: 
-- - [ ] [Nawras Kanjo](https://git.chalmers.se/nawrask)
-- - [ ] [Qutaiba Adnan](https://git.chalmers.se/qutaiba)
-- - [ ] [M.Ali Elhasan](https://git.chalmers.se/elhasan)
-- - [ ] [Yousef Abbas](https://git.chalmers.se/yousefab)
-- - [ ] [Muhmmad Aslan](https://git.chalmers.se/muhmmad)
-- - [ ] [Josef Abdurahim Al-Masri](https://git.chalmers.se/josefab)
+## 🧐 About <a name = "about"></a>
+Our project aims to leverage the Wio Terminal, an Arduino-based device, to monitor sleep environments and provide users with valuable insights into their sleep quality. By collecting data on temperature, humidity, light, and noise levels throughout the night, our project enables users to gain a comprehensive understanding of their sleep patterns. The collected data is analyzed and presented to users through a simple score, indicating the quality of their sleep. By providing easy access to this information via a mobile application, our project empowers users to make informed decisions about their sleep habits and improve their overall sleep quality.
 
 
-## License
-Open source, donation are very welcome..... we are poor students.
+## Usage <a name = "usage"></a>
+As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
+
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+Here are steps to getting started
+
+1. You should setup both of Arduino and Flutter framework. (Page is coming)
+2. To upload code to the Wio Seeed Terminal using Arduino IDE, it is necessary to have the terminal device. Additionally, there will be several sensors connected to the terminal that can be used.(Page is coming)
+3. Git must be installed on the device before using GitLab.(Page is coming)
+4. It is required to clone the repository to work on it. (Page is coming)
+5. The project requires the use of MQTT protocol, and the developers have used mosquitto for this purpose.(Page is coming)
+
+### Prerequisites
+What things you need to install the software and how to install them.
+
+```
+https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Instruction
+```
+
+### Installing
+
+To install and run this project, follow these steps:
+
+1) Install Arduino IDE and the necessary libraries.
+2) Install the Flutter SDK and an IDE of your choice.
+3) Connect the Wio Seeed Terminal and sensors.
+4) Clone the repository.
+5) Install Mosquitto.
+
+
+## Acknowledgement <a name = "acknowledgement"></a>
+We want to give a shout-out to everyone who helped us out with this project! First off, a huge thank you to our amazing proffessor and his loyal TAs, Francisco Gomes, Luiz Rosane and Nicole Quinstedt, for being there every step of the way with their awesome advice and encouragement. We couldn't have done it without you! Also, big ups to all of our classmates and friends who gave us feedback and support along the way. You guys are the best! And finally, a special thanks to Göteborg's univercity for hooking us up with the cash to make this happen. We appreciate your support more than you know. Last but not least, our group members with all the hard work they did during the course period.
+Thanks again, everyone!
+
+
+## Authors <a name = "authors"></a>
+Information about our amazing team and the team contract can be found <a href= "https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Team"> here</a>
+
+
+
+
+
