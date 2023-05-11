@@ -11,6 +11,17 @@ class TakeANapLabel extends StatelessWidget {
   }
 }
 
+class SleepLogLabel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "Sleep Log ",
+      textAlign: TextAlign.left,
+      style: TextStyle(fontSize: 20, color: Colors.black),
+    );
+  }
+}
+
 class SleepLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,4 +36,3 @@ class SleepLabel extends StatelessWidget {
     );
   }
 }
-
