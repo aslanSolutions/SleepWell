@@ -1,6 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:sleep_well/color_configurer.dart';
+
 
 class ExpandableProgressBar extends StatefulWidget {
   const ExpandableProgressBar(this.icon, {super.key});
@@ -17,6 +18,7 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
     with SingleTickerProviderStateMixin {
   _ExpandableProgressBarState(this.icon);
 
+  Color color = ColorConfigurer.getColor(0.8);
   final String icon;
 
   late AnimationController _animationController;
@@ -69,14 +71,14 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
-                    child: const SizedBox(
+                    child: SizedBox(
                       height: 15,
                       width: 300,
                       child: LinearProgressIndicator(
-                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                         value: 0.82,
                         valueColor:
-                            AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 10, 200, 22)),
+                            AlwaysStoppedAnimation<Color>(color),
                       ),
                     ),
                   ),
