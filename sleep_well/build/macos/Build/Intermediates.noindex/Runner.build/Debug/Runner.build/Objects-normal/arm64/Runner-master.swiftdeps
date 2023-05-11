@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
-options: "142b622a153b57bb32821234e45957e01f372c79cfd591e3cebc33d3262e0b4e"
-build_start_time: [1683563936, 961724000]
-build_end_time: [1683563946, 39866000]
-inputs:
-  "/Users/ajal-masri/Desktop/sleep-well/sleep_well/macos/Flutter/GeneratedPluginRegistrant.swift": [1683563923, 633734840]
-  "/Users/ajal-masri/Desktop/sleep-well/sleep_well/macos/Runner/AppDelegate.swift": [1680204710, 0]
-  "/Users/ajal-masri/Desktop/sleep-well/sleep_well/macos/Runner/MainFlutterWindow.swift": [1680204710, 0]
