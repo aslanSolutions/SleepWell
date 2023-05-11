@@ -1,4 +1,0 @@
-#Mon May 08 18:39:30 CEST 2023
-base.0=/Users/ajal-masri/Desktop/sleep-well/sleep_well/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
