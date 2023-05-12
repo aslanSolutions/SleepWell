@@ -61,14 +61,26 @@ class BrokerConnection {
       exit(-1);
     }
 
-    //TODO (Qutaiba)
-    // Create subscirbe/listening connection
+    print('Subscribing to the sleep/app topic');
+    const topic = 'sleep/app';
+    client.subscribe(topic, MqttQos.atMostOnce);
 
+    client.updates!.listen((List<MqttReceivedMessage<MqttMessage?>>? c) {
+      final recMess = c![0].payload as MqttPublishMessage;
+      final pt =
+          MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+
+      print(
+          'Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
+      print('');
+    });
     //TODO (Yosef)
     // Create publishing
 
     //TODO (M.Ali)
     // Create the payload part
+    print('Subscribing to the $topic topic');
+    client.subscribe(topic, MqttQos.exactlyOnce);
 
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);
