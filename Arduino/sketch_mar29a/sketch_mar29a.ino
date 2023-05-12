@@ -1,105 +1,153 @@
 #include "DHT.h"
-#include "wifiMqtt.h"
+#include "TFT_eSPI.h"
+
 #define DHTPIN 0
 #define DHTTYPE DHT11
+#define ANALOG_PIN A0
 
 DHT dht(DHTPIN, DHTTYPE);
 int counter = 0;
-int light_value = 0;
-int sound_value = 0;
-int temperature_value = 0;
-int humidity_value = 0;
+int joyStick = 0;
 
 int exp_size = 2881;
 
-int* light_array = new int[exp_size];
-int* sound_array = new int[exp_size];
-int* temperature_array = new int[exp_size];
-int* humidity_array = new int[exp_size];
-
+TFT_eSPI tft;
 
 void setup() {
+  
+  tft.begin();
+  tft.fillScreen(TFT_BLACK);
+  tft.setRotation(3);
+
   pinMode(WIO_LIGHT, INPUT);
   pinMode(WIO_MIC, INPUT);
-  Serial.begin(9600);
   Serial.begin(115200);
+
+  pinMode(WIO_5S_PRESS, INPUT);   
+  pinMode(WIO_5S_UP, INPUT);  
+  pinMode(WIO_5S_DOWN, INPUT);  
+  pinMode(WIO_5S_LEFT, INPUT); 
+  pinMode(WIO_5S_RIGHT, INPUT);
+
   dht.begin();
-
-  memset(light_array, 0, sizeof(light_array));
-  memset(sound_array, 0, sizeof(sound_array));
-  memset(temperature_array, 0, sizeof(temperature_array));
-  memset(humidity_array, 0, sizeof(humidity_array));
-
-  light_array[0] = 1;
-  sound_array[0] = 1;
-  temperature_array[0] = 1;
-  humidity_array[0] = 1;
+  
 }
 
 void loop() {
-
-  if(counter > exp_size){
-    return;
-  }
 
   int light = analogRead(WIO_LIGHT);
   int sound = analogRead(WIO_MIC);
   int temperature = dht.readTemperature();
   int humidity = dht.readHumidity();
 
-  Serial.print("Current Values, Counter: " + String(counter) + " Light " + String(light) + " sound " + String(sound) + " temperature " + String(temperature) + " humidity " + String(humidity) + "  ||||  ");
-
- 
-
-  light_array[counter] = light;
-  sound_array[counter] = sound;
-  temperature_array[counter] = temperature;
-  humidity_array[counter] = humidity;
-
-  int light_median = 0, sound_median = 0, temperature_median = 0, humidity_median = 0;
-  
-  //Loop to to find the values until the specific done
-  for (int i = 0; i < counter; i++) {
-    //For all the task!! There is already variables which you have to use while imlpementing the each task
-    
-    //TODO Light 
-    light_median += light_array[i];
-
-    /*
-    The conuter is gonig to increase every time to write the value which measured from the light sensor
-    */
-    //Implement it here
-    sound_median += sound_array[i];
-    
-    //TODO Temperature
-    /*
-    The conuter is gonig to increase every time to write the value which measured from the sensor temperature
-    */
-        temperature_median += temperature_array[i];
-
-
-    //TODO Humidity
-    /*
-    The conuter is gonig to increase every time to write the value which measured from the sensor humidity
-    */
-    //Implement it here
-
-    humidity_median += humidity_array[i];
+  if(counter > exp_size){
+    return;
   }
 
-  
-  light_avarage = //TODO: Find the way to calculate the avarage of the light values
-  sound_median = sound_median / counter;
-  temperature_avarage = //TODO: Find the way to calculate the avarage of the temperature values
-  humidity_avarage = //TODO: Find the way to calculate the avarage of the humidity values
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextSize(2);
 
- 
-  Serial.print("Average Values, Counter: " + String(counter) + " Light " + String(light_median) + " sound " + String(sound_median) + " temperature " + String(temperature_median) + " humidity " + String(humidity_median));
-  Serial.println();
+  int sqr = tft.height() / 1.5;
+  int x1 = 0;
+  int y1 = 0;
+  int x2 = x1 + sqr;
+  int y2 = y1 + sqr - 40;
 
-  //Here to increase the value of the counter every time, it is increasing by 1
-  counter += 1;
+  if (digitalRead(WIO_5S_DOWN) == LOW) {
+    joyStick = 1;
+  }
+  if (digitalRead(WIO_5S_UP) == LOW) {
+    joyStick = 2;
+  }
+  if (digitalRead(WIO_5S_RIGHT) == LOW) {
+    joyStick = 3;
+  }
+  if (digitalRead(WIO_5S_LEFT) == LOW) {
+    joyStick = 4;
+  }
+  if (digitalRead(WIO_5S_PRESS) == LOW) {
+    joyStick = 0;
+  }
 
-  delay(1);
+  char tempStr[10];
+  char humStr[10];
+  char ligStr[10];
+  char souStr[10];
+
+  switch (joyStick) {
+    case 1: // down
+    {
+      char tempStr[10];
+      sprintf(tempStr, "%.1f C", temperature);
+      tft.fillRect(0, 0, tft.height() + 80, tft.height() , TFT_RED);
+      tft.setTextColor(TFT_BLACK);
+      String tempString = "Temp: " + String(temperature);
+      tft.drawString(tempString,15, 15);
+      break;
+    }
+
+    case 2: { //up
+      sprintf(humStr, "%.1f %%", humidity);
+      tft.fillRect(0, 0, tft.height() + 80, tft.height() , TFT_GREEN);
+      tft.setTextColor(TFT_BLACK);
+      String humidity2 = "Humidity: " + String(humidity);
+      tft.drawString(humidity2, 15, 15);
+      break;
+    }
+
+    case 3: { //right
+      sprintf(ligStr, "%.1f %%", light);
+      tft.fillRect(0, 0, tft.height() + 80, tft.height() ,TFT_BLUE);
+      tft.setTextColor(TFT_BLACK);
+      String light2 = "Light: " + String(light);
+      tft.drawString(light2, 15, 15);
+
+      break;
+    }
+
+    case 4: { //left
+      tft.fillRect(0, 0, tft.height() + 80, tft.height() , TFT_YELLOW);
+      tft.setTextColor(TFT_BLACK);
+      String sound1 = "Sound: " + String(sound);
+      tft.drawString( sound1, 15, 15);
+      break;
+    }
+    case 0: {
+      sprintf(tempStr, "%.1f C", temperature);
+      tft.fillRect(x1, y1, sqr, sqr, TFT_RED);
+      tft.setTextColor(TFT_BLACK);
+      String temperature1 = "Temp: " + String(temperature);
+      tft.drawString(temperature1, 15, 15);
+
+
+
+      sprintf(humStr, "%.1f %%", humidity);
+      tft.fillRect(x2, y1, sqr, sqr, TFT_GREEN);
+      tft.setTextColor(TFT_BLACK);
+      String humidity1 = "Humidity: " + String(humidity);
+      tft.drawString(humidity1, x2 + 15, 15);
+
+      sprintf(ligStr, "%.1f %%", light);
+
+      tft.fillRect(x1, y2, sqr, sqr, TFT_BLUE);
+      tft.setTextColor(TFT_BLACK);
+      String light1 = "Light: " + String(light);
+      tft.drawString(light1, 15, y2 + 15);
+
+
+      sprintf(souStr, "%.1f %%", sound);
+
+
+      tft.fillRect(x2, y2, sqr, sqr, TFT_YELLOW);
+      tft.setTextColor(TFT_BLACK);
+      String sound1 = "Sound: " + String(sound);
+      tft.drawString( sound1, x2 + 15, y2 + 15);
+
+      break;
+    }
+  }
+
+  counter = counter + 1;
+  delay(1000);
 
 }
