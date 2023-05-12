@@ -170,6 +170,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "slide_to_act",
+      "rootUri": "file:///C:/Users/lorda/AppData/Local/Pub/Cache/hosted/pub.dev/slide_to_act-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///C:/Users/lorda/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.9.1",
       "packageUri": "lib/",
@@ -224,7 +230,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-11T14:05:16.362163Z",
+  "generated": "2023-05-11T23:55:24.373469Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

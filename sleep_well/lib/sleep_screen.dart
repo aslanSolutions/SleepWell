@@ -1,4 +1,3 @@
-import 'package:adv/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:lottie/lottie.dart';
