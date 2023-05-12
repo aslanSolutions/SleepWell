@@ -61,19 +61,26 @@ class BrokerConnection {
       exit(-1);
     }
 
-    //TODO (Qutaiba)
-    // Create subscirbe/listening connection
+    print('Subscribing to the sleep/app topic');
+    const topic = 'sleep/app';
+    client.subscribe(topic, MqttQos.atMostOnce);
 
-    client.published!.listen((MqttPublishMessage message) {
+    client.updates!.listen((List<MqttReceivedMessage<MqttMessage?>>? c) {
+      final recMess = c![0].payload as MqttPublishMessage;
+      final pt =
+          MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+
       print(
-          'Published notification:: topic is ${message.variableHeader!.topicName}, with Qos ${message.header!.qos}');
+          'Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
+      print('');
     });
-
-    print('Publishing our topic');
-    client.publishMessage(TOPIC, MqttQos.exactlyOnce, builder.payload!);
+    //TODO (Yosef)
+    // Create publishing
 
     //TODO (M.Ali)
     // Create the payload part
+    print('Subscribing to the $topic topic');
+    client.subscribe(topic, MqttQos.exactlyOnce);
 
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);

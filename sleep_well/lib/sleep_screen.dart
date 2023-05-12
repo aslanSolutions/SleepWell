@@ -3,7 +3,6 @@ import 'package:slide_to_act/slide_to_act.dart';
 import 'package:lottie/lottie.dart';
 import './labels.dart';
 
-
 class SleepScreen extends StatefulWidget {
   const SleepScreen({Key? key}) : super(key: key);
 
@@ -18,7 +17,7 @@ class _SleepScreenState extends State<SleepScreen> {
 
   Container buildBackground() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
             Color.fromARGB(255, 1, 69, 125),
@@ -36,7 +35,7 @@ class _SleepScreenState extends State<SleepScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
-        title: Text("S L E E P W E L L"),
+        title: const Text("S L E E P W E L L"),
         automaticallyImplyLeading: false,
       ),
       body: Stack(
@@ -82,15 +81,15 @@ class _SleepScreenState extends State<SleepScreen> {
           ),
           Center(
             child: Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: SlideAction(
                 borderRadius: 12,
                 elevation: 0,
                 innerColor: Colors.yellow,
-                outerColor: Color.fromARGB(255, 0, 44, 80),
+                outerColor: const Color.fromARGB(255, 0, 44, 80),
                 sliderButtonIcon: const Icon(Icons.mode_night),
                 text: "Slide to wake up",
-                submittedIcon: Icon(
+                submittedIcon: const Icon(
                   Icons.wb_sunny,
                   color: Colors.yellow,
                 ),
