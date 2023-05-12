@@ -5,6 +5,7 @@ import './progress_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';
+import './sleep_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(this.goBack, {Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Container buildBackground() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.blue, Colors.white],
         ),
@@ -84,12 +85,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       appBar: AppBar(
         backgroundColor: Colors.blue[300],
         elevation: 0,
-        title: Text("S L E E P W E L L"),
+        title: const Text("S L E E P W E L L"),
       ),
       body: Stack(
         children: [
           buildBackground(),
-          ClockWidget(hoursSlept: 3),
+          const ClockWidget(hoursSlept: 3),
           Column(
             children: [
               const SizedBox(
