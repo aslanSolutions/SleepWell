@@ -30,12 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mqtt_client: ^9.8.1  
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  slide_to_act: ^2.0.1
   cupertino_icons: ^1.0.2
   percent_indicator: ^4.0.1
   lottie: ^1.1.0
@@ -66,16 +64,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/humidity.png
     - assets/images/light.png
     - assets/images/loud.png
     - assets/images/temp.png
-    - assets/images/background.png
     - assets/animations/king-bed.json
     - assets/animations/Order_History.json
     - assets/animations/sleep-time.json
-    - assets/animations/Night-Moon.json"
-    - assets/animations/Sleep.json"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -88,10 +82,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Courgette
-      fonts:
-        - asset: fonts/Courgette-Regular.ttf
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
