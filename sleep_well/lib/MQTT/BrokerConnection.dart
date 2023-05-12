@@ -64,8 +64,13 @@ class BrokerConnection {
     //TODO (Qutaiba)
     // Create subscirbe/listening connection
 
-    //TODO (Yosef)
-    // Create publishing
+    client.published!.listen((MqttPublishMessage message) {
+      print(
+          'Published notification:: topic is ${message.variableHeader!.topicName}, with Qos ${message.header!.qos}');
+    });
+
+    print('Publishing our topic');
+    client.publishMessage(TOPIC, MqttQos.exactlyOnce, builder.payload!);
 
     //TODO (M.Ali)
     // Create the payload part
