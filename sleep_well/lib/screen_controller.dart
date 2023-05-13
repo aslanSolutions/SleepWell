@@ -1,7 +1,8 @@
+import 'package:sleep_well/log_screen.dart';
+import 'package:sleep_well/score_screen.dart';
+import 'package:sleep_well/sleep_screen.dart';
 import './home_screen.dart';
 import 'package:flutter/material.dart';
-import './second_screen.dart';
-import 'app_bar.dart';
 
 //This class handles switching screen and rendring the new UI when a new screen is displayed
 class ScreenController extends StatefulWidget {
@@ -19,19 +20,35 @@ class _ScreenControllerState extends State<ScreenController> {
   //Initialize the first screen that will be loaded
   @override
   void initState() {
-    activeScreen = HomeScreen(goBack);
+    activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
     super.initState();
   }
 
   // Switch to the --- screen
-  void switchScreen() {
+
+  void switchToSleep() {
     setState(() {
-      activeScreen = HomeScreen(goBack);
+      activeScreen = SleepScreen(switchToScore);
     });
   }
 
-  // Switch to the score screen
-  void goBack() {}
+  void switchToScore() {
+    setState(() {
+      activeScreen = ScoreScreen(switchToHome);
+    });
+  }
+
+  void switchToLog() {
+    setState(() {
+      activeScreen = LogScreen();
+    });
+  }
+
+  void switchToHome() {
+    setState(() {
+      activeScreen = HomeScreen(switchToSleep, switchToScore, switchToLog);
+    });
+  }
 
   // The main layout of the application (Background colors),
   // Should force all loaded screen to have this layout.

@@ -1,27 +1,32 @@
 import 'dart:async';
 import './clock_widget.dart';
-import './log_screen.dart';
-import './sleep_screen.dart';
 import './progress_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';
-import './sleep_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen(this.goBack, {Key? key}) : super(key: key);
-  final void Function() goBack;
+  const HomeScreen(this.switchToScore, this.switchTosleep, this.switchToLog,
+      {Key? key})
+      : super(key: key);
+  final void Function() switchToScore;
+  final void Function() switchTosleep;
+  final void Function() switchToLog;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState(goBack);
+  _HomeScreenState createState() => _HomeScreenState(
+      this.switchToScore, this.switchTosleep, this.switchToLog);
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  _HomeScreenState(this.goBack);
+  _HomeScreenState(this.switchToScore, this.switchTosleep, this.switchToLog);
 
   late AnimationController _controller;
   late AnimationController _controller2;
-  final void Function() goBack;
+
+  final void Function() switchToScore;
+  final void Function() switchTosleep;
+  final void Function() switchToLog;
 
   @override
   void initState() {
@@ -48,8 +53,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       marked = true;
       _controller.forward();
       await Future.delayed(const Duration(milliseconds: 900));
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const SleepScreen()));
+      switchTosleep();
       marked = false;
       _controller.reset();
     }
@@ -60,16 +64,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       marked2 = true;
       _controller2.forward();
       await Future.delayed(const Duration(milliseconds: 700));
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LogScreen()),
-      ).then((value) {
-        marked2 = false;
-        _controller2.reset();
-      });
+      switchToLog();
+      marked2 = false;
+      _controller2.reset();
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               alignment: Alignment.center,
               child: GestureDetector(
                 onTap: () {
-                  goBack();
+                  switchToScore();
                 },
                 child: const ProgressCircle(0.89, 150),
               ),

@@ -5,14 +5,14 @@ import 'package:sleep_well/progress_bar.dart';
 import 'package:sleep_well/progress_circle.dart';
 
 class ScoreScreen extends StatelessWidget {
-  const ScoreScreen(this.switchScreen, {super.key});
+  const ScoreScreen(this.goBack, {super.key});
 
   static const String humidityIcon = "assets/images/humidity.png";
   static const String lightIcon = "assets/images/light.png";
   static const String loudIcon = "assets/images/loud.png";
   static const String tempIcon = "assets/images/temp.png";
 
-  final void Function() switchScreen;
+  final void Function() goBack;
 
   @override
   Widget build(context) {
@@ -38,7 +38,7 @@ class ScoreScreen extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back_ios_new),
                     iconSize: 20,
                     color: const Color.fromARGB(255, 0, 0, 0),
-                    onPressed: switchScreen,
+                    onPressed: goBack,
                   ),
                 ),
               ),
@@ -68,7 +68,8 @@ class ScoreScreen extends StatelessWidget {
                 filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                 child: Container(
                   padding: const EdgeInsets.all(10),
-                  color: const Color.fromARGB(255, 149, 89, 227).withOpacity(0.7),
+                  color:
+                      const Color.fromARGB(255, 149, 89, 227).withOpacity(0.7),
                   child: const Text(
                     "Your overal sleep invairoment was good \nYou can see more details down below",
                     style: TextStyle(color: Colors.black, fontSize: 20),
@@ -85,7 +86,8 @@ class ScoreScreen extends StatelessWidget {
                 filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                 child: Container(
                   padding: const EdgeInsets.all(10),
-                  color: const Color.fromARGB(255, 149, 89, 227).withOpacity(0.7),
+                  color:
+                      const Color.fromARGB(255, 149, 89, 227).withOpacity(0.7),
                   child: Column(
                     children: const [
                       ExpandableProgressBar(lightIcon),
