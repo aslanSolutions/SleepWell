@@ -1,6 +1,7 @@
 import './home_screen.dart';
 import 'package:flutter/material.dart';
 import './second_screen.dart';
+import 'app_bar.dart';
 
 //This class handles switching screen and rendring the new UI when a new screen is displayed
 class ScreenController extends StatefulWidget {
@@ -38,11 +39,12 @@ class _ScreenControllerState extends State<ScreenController> {
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
+        //appBar: const MyAppBar(title: 'S L E E P W E L L'),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/background.png'),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
 

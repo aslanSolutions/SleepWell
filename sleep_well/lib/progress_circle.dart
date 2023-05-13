@@ -64,7 +64,8 @@ class _ProgressCircleState extends State<ProgressCircle>
             children: [
               Text(
                 "${(displayedScore * 100).toInt()}",
-                style: TextStyle(fontSize: 50, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 50, color: Color.fromARGB(255, 0, 0, 0)),
               ),
               Text("SCORE AVG"),
             ],

@@ -23,17 +23,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController _controller2;
   final void Function() goBack;
 
-  Container buildBackground() {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.blue, Colors.white],
-        ),
-      ),
-      constraints: const BoxConstraints.expand(),
-    );
-  }
-
   @override
   void initState() {
     super.initState();
@@ -82,91 +71,100 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue[300],
-        elevation: 0,
-        title: const Text("S L E E P W E L L"),
-      ),
-      body: Stack(
-        children: [
-          buildBackground(),
-          const ClockWidget(hoursSlept: 3),
-          Column(
-            children: [
-              const SizedBox(
-                height: 60,
+    return Stack(
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(top: 70.0),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              "SLEEP WELL",
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
-              Align(
-                alignment: Alignment.center,
-                child: GestureDetector(
-                  onTap: () {
-                    goBack();
-                  },
-                  child: const ProgressCircle(0.89, 150),
+            ),
+          ),
+        ),
+        Column(
+          children: [
+            const SizedBox(
+              height: 150,
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: GestureDetector(
+                onTap: () {
+                  goBack();
+                },
+                child: const ProgressCircle(0.89, 150),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const ClockWidget(hoursSlept: 3),
+            const SizedBox(
+              height: 200,
+            ),
+            Row(
+              children: [
+                Transform.translate(
+                  offset: const Offset(-40, -60),
+                  child: GestureDetector(
+                    onTap: () {
+                      _onBedTap(context);
+                    },
+                    child: Lottie.asset(
+                      "assets/animations/king-bed.json",
+                      controller: _controller,
+                      fit: BoxFit.cover,
+                      width: 155,
+                      height: 155,
+                    ),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 250,
-              ),
-              Row(
-                children: [
-                  Transform.translate(
-                    offset: const Offset(-40, -60),
-                    child: GestureDetector(
-                      onTap: () {
-                        _onBedTap(context);
-                      },
-                      child: Lottie.asset(
-                        "assets/animations/king-bed.json",
-                        controller: _controller,
-                        fit: BoxFit.cover,
-                        width: 155,
-                        height: 155,
-                      ),
+                const SizedBox(
+                  width: 120,
+                ),
+                Transform.translate(
+                  offset: const Offset(-15, -68),
+                  child: GestureDetector(
+                    onTap: () {
+                      _onLogTap(context);
+                    },
+                    child: Lottie.asset(
+                      "assets/animations/sleep-time.json",
+                      controller: _controller2,
+                      fit: BoxFit.cover,
+                      width: 130,
+                      height: 130,
                     ),
                   ),
-                  const SizedBox(
-                    width: 120,
-                  ),
-                  Transform.translate(
-                    offset: const Offset(-15, -68),
-                    child: GestureDetector(
-                      onTap: () {
-                        _onLogTap(context);
-                      },
-                      child: Lottie.asset(
-                        "assets/animations/sleep-time.json",
-                        controller: _controller2,
-                        fit: BoxFit.cover,
-                        width: 130,
-                        height: 130,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 10,
-            left: 50,
-            right: 0,
-            child: Transform.translate(
-              offset: const Offset(0, -50),
-              child: TakeANapLabel(),
+                ),
+              ],
             ),
+          ],
+        ),
+        Positioned(
+          bottom: 10,
+          left: 50,
+          right: 0,
+          child: Transform.translate(
+            offset: const Offset(0, -50),
+            child: TakeANapLabel(),
           ),
-          Positioned(
-            bottom: 10,
-            right: 40,
-            child: Transform.translate(
-              offset: const Offset(0, -50),
-              child: SleepLogLabel(),
-            ),
+        ),
+        Positioned(
+          bottom: 10,
+          right: 40,
+          child: Transform.translate(
+            offset: const Offset(0, -50),
+            child: SleepLogLabel(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
