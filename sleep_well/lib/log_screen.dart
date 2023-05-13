@@ -3,7 +3,8 @@ import './values.dart';
 import 'package:flutter/material.dart';
 
 class LogScreen extends StatelessWidget {
-  const LogScreen({super.key});
+  const LogScreen(this.switchToScore, {super.key});
+  final void Function() switchToScore;
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +12,14 @@ class LogScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue[300],
         elevation: 0,
-        title: Text("S L E E P W E L L"),
+        title: const Text("S L E E P W E L L"),
       ),
       body: Column(
         children: [
-          Expanded(child: LogScreenController(values)),
+          Expanded(
+            child: LogScreenController(values),
+          ),
+          Expanded(child: LogScreen2(values, switchToScore))
         ],
       ),
     );

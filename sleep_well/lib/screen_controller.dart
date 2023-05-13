@@ -40,7 +40,7 @@ class _ScreenControllerState extends State<ScreenController> {
 
   void switchToLog() {
     setState(() {
-      activeScreen = LogScreen();
+      activeScreen = LogScreen(switchToScore);
     });
   }
 
