@@ -74,19 +74,24 @@ class BrokerConnection {
           'Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
       print('');
     });
-    
+
     client.published!.listen((MqttPublishMessage message) {
       print(
           'Published notification:: topic is ${message.variableHeader!.topicName}, with Qos ${message.header!.qos}');
     });
 
-    //TODO (M.Ali)
-    // Create the payload part
+    final builder = MqttClientPayloadBuilder();
+    builder.addString('Hello from Group 1');
+
     print('Subscribing to the $topic topic');
     client.subscribe(topic, MqttQos.exactlyOnce);
 
     print('Publishing our topic');
     client.publishMessage(TOPIC, MqttQos.exactlyOnce, builder.payload!);
+
+    //unsubscribe and exit gracefully
+    print('Unsubscribing');
+    client.unsubscribe(topic);
 
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);
