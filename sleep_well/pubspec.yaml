@@ -70,6 +70,7 @@ flutter:
     - assets/images/light.png
     - assets/images/loud.png
     - assets/images/temp.png
+    - assets/images/humidity.png
     - assets/animations/king-bed.json
     - assets/animations/Order_History.json
     - assets/animations/sleep-time.json
