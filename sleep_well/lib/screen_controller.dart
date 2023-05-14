@@ -1,3 +1,5 @@
+import 'package:sleep_well/score_screen.dart';
+
 import './home_screen.dart';
 import 'package:flutter/material.dart';
 import './second_screen.dart';
@@ -30,7 +32,11 @@ class _ScreenControllerState extends State<ScreenController> {
   }
 
   // Switch to the score screen
-  void goBack() {}
+  void goBack() {
+    setState(() {
+      activeScreen = ScoreScreen(switchScreen);
+    });
+  }
 
   // The main layout of the application (Background colors),
   // Should force all loaded screen to have this layout.
