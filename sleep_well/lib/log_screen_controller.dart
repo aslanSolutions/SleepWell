@@ -61,14 +61,16 @@ class LogScreenController extends StatelessWidget {
                       barWidth: 4,
                       color: Color.fromARGB(255, 197, 77, 69),
                       spots: scores
-                          .map((score) =>
-                              FlSpot(score.x.toDouble(), score.y.toDouble()))
+                          .map((score) => FlSpot(
+                              score.x.toDouble() + 1, score.y.toDouble()))
                           .toList(),
                     ),
                   ],
                 ),
               ),
             ),
+            Text("Days",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
           ],
         ),
       );
