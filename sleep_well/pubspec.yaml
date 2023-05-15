@@ -39,7 +39,10 @@ dependencies:
   fl_chart: ^0.60.0
   flutter_flip_view: ^1.0.3
   slide_to_act: ^2.0.1
+<<<<<<< sleep_well/pubspec.yaml
   mqtt_client: ^9.8.1
+=======
+>>>>>>> sleep_well/pubspec.yaml
 
 dev_dependencies:
   flutter_test:

@@ -29,8 +29,10 @@ class BrokerConnection {
 
     client.connectTimeoutPeriod = 2000;
 
-    // TODO (Qutaiba)
-    //Add the client callbacks method
+    client.onDisconnected = onDisconnected;
+    client.onConnected = onConnected;
+
+    client.onSubscribed = onSubscribed;
 
     final connectionMess = MqttConnectMessage()
         .withWillTopic('willTopic')
@@ -74,13 +76,24 @@ class BrokerConnection {
           'Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
       print('');
     });
-    //TODO (Yosef)
-    // Create publishing
 
-    //TODO (M.Ali)
-    // Create the payload part
+    client.published!.listen((MqttPublishMessage message) {
+      print(
+          'Published notification:: topic is ${message.variableHeader!.topicName}, with Qos ${message.header!.qos}');
+    });
+
+    final builder = MqttClientPayloadBuilder();
+    builder.addString('Hello from Group 1');
+
     print('Subscribing to the $topic topic');
     client.subscribe(topic, MqttQos.exactlyOnce);
+
+    print('Publishing our topic');
+    client.publishMessage(TOPIC, MqttQos.exactlyOnce, builder.payload!);
+
+    //unsubscribe and exit gracefully
+    print('Unsubscribing');
+    client.unsubscribe(topic);
 
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);
@@ -90,9 +103,25 @@ class BrokerConnection {
     return 0;
   }
 
-  /* TODO Functions (Yousef)
-    1. The subscribed callback
-    2. The unsolicited disconnect callback
-    3. The connected callback
-  */
+  /// The subscribed callback
+  void onSubscribed(String topic) {
+    print('Subscription confirmed for topic $topic');
+  }
+
+  /// The unsolicited disconnect callback
+  void onDisconnected() {
+    print('Client disconnection');
+    if (client.connectionStatus!.disconnectionOrigin ==
+        MqttDisconnectionOrigin.solicited) {
+      print('OnDisconnected callback is solicited, this is correct');
+    } else {
+      print(
+          'OnDisconnected callback is unsolicited or none, this is incorrect - exiting');
+      exit(-1);
+    }
+  }
+
+  void onConnected() {
+    print('Client connection was successful');
+  }
 }

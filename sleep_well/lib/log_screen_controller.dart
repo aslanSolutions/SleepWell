@@ -6,6 +6,7 @@ import './score_screen.dart';
 // class
 class LogScreenController extends StatelessWidget {
   final List<Values> scores;
+
   const LogScreenController(this.scores, {Key? key}) : super(key: key);
 
   @override
@@ -13,7 +14,7 @@ class LogScreenController extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.blue.shade600,
+              Color.fromARGB(255, 13, 146, 255),
               Colors.white,
             ],
             begin: Alignment.topCenter,
@@ -21,6 +22,7 @@ class LogScreenController extends StatelessWidget {
           ),
         ),
         padding: const EdgeInsets.all(50),
+<<<<<<< sleep_well/lib/log_screen_controller.dart
         child: AspectRatio(
           aspectRatio: 1.5,
           child: LineChart(
@@ -42,32 +44,64 @@ class LogScreenController extends StatelessWidget {
                 getDrawingHorizontalLine: (value) => FlLine(
                   color: const Color.fromARGB(255, 7, 65, 225),
                   strokeWidth: 1,
+=======
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 1.5,
+              child: LineChart(
+                LineChartData(
+                  titlesData: FlTitlesData(
+                    bottomTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: true)),
+                    leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                      showTitles: false,
+                    )),
+                    rightTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    topTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                  ),
+                  gridData: FlGridData(
+                    show: true,
+                    getDrawingHorizontalLine: (value) => FlLine(
+                      color: Color.fromARGB(255, 0, 25, 94),
+                      strokeWidth: 1,
+                    ),
+                  ),
+                  borderData: FlBorderData(
+                    show: true,
+                    border: Border.all(),
+                  ),
+                  lineBarsData: [
+                    LineChartBarData(
+                      dotData: FlDotData(show: true),
+                      belowBarData: BarAreaData(
+                          show: true,
+                          color:
+                              Color.fromARGB(255, 3, 91, 163).withOpacity(0.3)),
+                      isCurved: true,
+                      barWidth: 4,
+                      color: Color.fromARGB(255, 197, 77, 69),
+                      spots: scores
+                          .map((score) => FlSpot(
+                              score.x.toDouble() + 1, score.y.toDouble()))
+                          .toList(),
+                    ),
+                  ],
+>>>>>>> sleep_well/lib/log_screen_controller.dart
                 ),
               ),
-              borderData: FlBorderData(
-                show: true,
-                border: Border.all(),
-              ),
-              lineBarsData: [
-                LineChartBarData(
-                  dotData: FlDotData(show: true),
-                  belowBarData: BarAreaData(
-                      show: true, color: Colors.blue.withOpacity(0.3)),
-                  isCurved: true,
-                  barWidth: 4,
-                  color: Colors.blue,
-                  spots: scores
-                      .map((score) =>
-                          FlSpot(score.x.toDouble(), score.y.toDouble()))
-                      .toList(),
-                ),
-              ],
             ),
-          ),
+            Text("Days",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
+          ],
         ),
       );
 }
 
+<<<<<<< sleep_well/lib/log_screen_controller.dart
 // todo add logscreen 2
 class LogScreen2 extends StatelessWidget {
   const LogScreen2(this.scores, this.switchToScore, {Key? key})
@@ -145,3 +179,7 @@ class LogScreen2 extends StatelessWidget {
     );
   }
 }
+=======
+
+// todo add logscreen 2
+>>>>>>> sleep_well/lib/log_screen_controller.dart
