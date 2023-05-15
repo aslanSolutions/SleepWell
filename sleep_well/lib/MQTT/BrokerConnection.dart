@@ -29,8 +29,10 @@ class BrokerConnection {
 
     client.connectTimeoutPeriod = 2000;
 
-    // TODO (Qutaiba)
-    //Add the client callbacks method
+    client.onDisconnected = onDisconnected;
+    client.onConnected = onConnected;
+
+    client.onSubscribed = onSubscribed;
 
     final connectionMess = MqttConnectMessage()
         .withWillTopic('willTopic')
@@ -101,9 +103,25 @@ class BrokerConnection {
     return 0;
   }
 
-  /* TODO Functions (Yousef)
-    1. The subscribed callback
-    2. The unsolicited disconnect callback
-    3. The connected callback
-  */
+  /// The subscribed callback
+  void onSubscribed(String topic) {
+    print('Subscription confirmed for topic $topic');
+  }
+
+  /// The unsolicited disconnect callback
+  void onDisconnected() {
+    print('Client disconnection');
+    if (client.connectionStatus!.disconnectionOrigin ==
+        MqttDisconnectionOrigin.solicited) {
+      print('OnDisconnected callback is solicited, this is correct');
+    } else {
+      print(
+          'OnDisconnected callback is unsolicited or none, this is incorrect - exiting');
+      exit(-1);
+    }
+  }
+
+  void onConnected() {
+    print('Client connection was successful');
+  }
 }
