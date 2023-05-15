@@ -11,7 +11,7 @@ class LogScreenController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color.fromARGB(255, 13, 146, 255),
@@ -22,29 +22,6 @@ class LogScreenController extends StatelessWidget {
           ),
         ),
         padding: const EdgeInsets.all(50),
-<<<<<<< sleep_well/lib/log_screen_controller.dart
-        child: AspectRatio(
-          aspectRatio: 1.5,
-          child: LineChart(
-            LineChartData(
-              titlesData: FlTitlesData(
-                bottomTitles:
-                    AxisTitles(sideTitles: SideTitles(showTitles: true)),
-                leftTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                  showTitles: false,
-                )),
-                rightTitles:
-                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                topTitles:
-                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
-              ),
-              gridData: FlGridData(
-                show: true,
-                getDrawingHorizontalLine: (value) => FlLine(
-                  color: const Color.fromARGB(255, 7, 65, 225),
-                  strokeWidth: 1,
-=======
         child: Column(
           children: [
             AspectRatio(
@@ -90,18 +67,16 @@ class LogScreenController extends StatelessWidget {
                           .toList(),
                     ),
                   ],
->>>>>>> sleep_well/lib/log_screen_controller.dart
                 ),
               ),
             ),
-            Text("Days",
+            const Text("Days",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
           ],
         ),
       );
 }
 
-<<<<<<< sleep_well/lib/log_screen_controller.dart
 // todo add logscreen 2
 class LogScreen2 extends StatelessWidget {
   const LogScreen2(this.scores, this.switchToScore, {Key? key})
@@ -115,10 +90,11 @@ class LogScreen2 extends StatelessWidget {
       title: 'Sleep Well',
       home: Scaffold(
         body: ListView.builder(
+  
           itemCount: scores.length,
           itemBuilder: (context, index) {
             return _buildCard(
-              scores[index].x.toString(),
+              scores[index+1].x.toString(),
               'Sleep Condition', // Here you would put the correct sleep condition. I'm just using a placeholder.
               scores[index].y.toString(),
               context,
@@ -147,7 +123,7 @@ class LogScreen2 extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.only(bottom: 8),
                     child: Text(
-                      'Day $day',
+                      'Day $day ',
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -179,7 +155,3 @@ class LogScreen2 extends StatelessWidget {
     );
   }
 }
-=======
-
-// todo add logscreen 2
->>>>>>> sleep_well/lib/log_screen_controller.dart
