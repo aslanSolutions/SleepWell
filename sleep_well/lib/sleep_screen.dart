@@ -4,16 +4,18 @@ import 'package:lottie/lottie.dart';
 import './labels.dart';
 
 class SleepScreen extends StatefulWidget {
-  const SleepScreen({Key? key}) : super(key: key);
+  SleepScreen(this.switchToScore, {Key? key}) : super(key: key);
+  final void Function() switchToScore;
 
   @override
-  State<SleepScreen> createState() => _SleepScreenState();
+  // ignore: no_logic_in_create_state
+  State<SleepScreen> createState() => _SleepScreenState(switchToScore);
 }
 
 class _SleepScreenState extends State<SleepScreen> {
-  void goBackFunction() {
-    Navigator.pop(context, 'reset');
-  }
+  _SleepScreenState(this.switchToScore);
+
+  final void Function() switchToScore;
 
   Container buildBackground() {
     return Container(
@@ -94,7 +96,7 @@ class _SleepScreenState extends State<SleepScreen> {
                   color: Colors.yellow,
                 ),
                 onSubmit: () {
-                  goBackFunction();
+                  switchToScore();
                 },
               ),
             ),

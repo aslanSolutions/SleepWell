@@ -10,6 +10,7 @@ class ProgressCircle extends StatefulWidget {
 
   @override
   State<ProgressCircle> createState() =>
+      // ignore: no_logic_in_create_state
       _ProgressCircleState(progressValue, radius);
 }
 
@@ -55,7 +56,8 @@ class _ProgressCircleState extends State<ProgressCircle>
         animateFromLastPercent: true,
         radius: radius,
         lineWidth: 50,
-        backgroundColor: Colors.white,
+        progressColor: Colors.green,
+        backgroundColor: Color.fromARGB(108, 18, 131, 162),
         circularStrokeCap: CircularStrokeCap.round,
         percent: displayedScore,
         center: Center(
@@ -64,9 +66,20 @@ class _ProgressCircleState extends State<ProgressCircle>
             children: [
               Text(
                 "${(displayedScore * 100).toInt()}",
-                style: TextStyle(fontSize: 50, color: Colors.white),
+                style: const TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 3, 64, 120),
+                ),
               ),
-              Text("SCORE AVG"),
+              const Text(
+                "SCORE AVG",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 3, 64, 120),
+                ),
+              ),
             ],
           ),
         ),

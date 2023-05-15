@@ -12,7 +12,7 @@ class ClockWidget extends StatelessWidget {
       top: 430,
       left: 50,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(
             "assets/animations/Clock.json",
