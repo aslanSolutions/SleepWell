@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import './score_screen.dart';
 
+// class
 class LogScreenController extends StatelessWidget {
   final List<Values> scores;
   const LogScreenController(this.scores, {Key? key}) : super(key: key);
