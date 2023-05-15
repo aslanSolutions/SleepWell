@@ -1,12 +1,7 @@
-<<<<<<< sleep_well/lib/screen_controller.dart
 import 'package:sleep_well/log_screen.dart';
 import 'package:sleep_well/score_screen.dart';
 import 'package:sleep_well/second_screen.dart';
 import 'package:sleep_well/sleep_screen.dart';
-=======
-import 'package:sleep_well/score_screen.dart';
-
->>>>>>> sleep_well/lib/screen_controller.dart
 import './home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +33,6 @@ class _ScreenControllerState extends State<ScreenController> {
     });
   }
 
-<<<<<<< sleep_well/lib/screen_controller.dart
   void switchToScore() {
     setState(() {
       activeScreen = ScoreScreen(switchToHome);
@@ -54,12 +48,6 @@ class _ScreenControllerState extends State<ScreenController> {
   void switchToHome() {
     setState(() {
       activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
-=======
-  // Switch to the score screen
-  void goBack() {
-    setState(() {
-      activeScreen = ScoreScreen(switchScreen);
->>>>>>> sleep_well/lib/screen_controller.dart
     });
   }
 
