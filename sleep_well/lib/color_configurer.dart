@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorConfigurer {
-
   static Color getColor(double progressValue) {
-
     if (progressValue >= 0.9) {
       return const Color.fromARGB(255, 8, 220, 15);
     } else if (progressValue >= 0.7) {

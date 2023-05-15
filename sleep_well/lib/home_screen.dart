@@ -4,6 +4,7 @@ import './progress_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(this.switchToScore, this.switchTosleep, this.switchToLog,
@@ -14,8 +15,9 @@ class HomeScreen extends StatefulWidget {
   final void Function() switchToLog;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState(
-      this.switchToScore, this.switchTosleep, this.switchToLog);
+  // ignore: library_private_types_in_public_api, no_logic_in_create_state
+  _HomeScreenState createState() =>
+      _HomeScreenState(switchToScore, switchTosleep, switchToLog);
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
@@ -107,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             const ClockWidget(hoursSlept: 3),
             const SizedBox(
-              height: 200,
+              height: 120,
             ),
             Row(
               children: [

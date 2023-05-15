@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:sleep_well/color_configurer.dart';
 
-
 class ExpandableProgressBar extends StatefulWidget {
   const ExpandableProgressBar(this.icon, {super.key});
   final String icon;
@@ -45,7 +44,7 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
+      children: [
         GestureDetector(
           onTap: () {
             setState(() {
@@ -60,10 +59,12 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
           child: Stack(
             children: <Widget>[
               Row(
-                children: <Widget>[
+                children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Image.asset(
+                      color: const Color.fromARGB(255, 198, 246, 255)
+                          .withOpacity(0.8),
                       icon,
                       width: 41,
                       height: 41,
@@ -75,10 +76,12 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
                       height: 15,
                       width: 300,
                       child: LinearProgressIndicator(
-                        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                        backgroundColor:
+                            const Color.fromARGB(255, 254, 252, 251)
+                                .withOpacity(0.6),
                         value: 0.82,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(color),
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                            Color.fromARGB(255, 3, 64, 120)),
                       ),
                     ),
                   ),
@@ -110,17 +113,17 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
             ? Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(16.0),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      color: const Color.fromARGB(255, 85, 0, 150).withOpacity(0.5),
+                      color: Color.fromARGB(255, 254, 252, 251),
                       child: const Text(
                         'This text will contain information about the score of this indivuall sensor and will give some suggestions to make it better',
                         style: TextStyle(
                           fontSize: 18,
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: Color.fromARGB(255, 18, 131, 162),
                         ),
                       ),
                     ),

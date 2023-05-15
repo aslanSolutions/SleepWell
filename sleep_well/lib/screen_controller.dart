@@ -1,5 +1,6 @@
 import 'package:sleep_well/log_screen.dart';
 import 'package:sleep_well/score_screen.dart';
+import 'package:sleep_well/second_screen.dart';
 import 'package:sleep_well/sleep_screen.dart';
 import './home_screen.dart';
 import 'package:flutter/material.dart';
@@ -40,13 +41,13 @@ class _ScreenControllerState extends State<ScreenController> {
 
   void switchToLog() {
     setState(() {
-      activeScreen = LogScreen(switchToScore);
+      activeScreen = LogScreen(switchToScore, switchToHome);
     });
   }
 
   void switchToHome() {
     setState(() {
-      activeScreen = HomeScreen(switchToSleep, switchToScore, switchToLog);
+      activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
     });
   }
 
@@ -62,10 +63,12 @@ class _ScreenControllerState extends State<ScreenController> {
             image: DecorationImage(
               image: AssetImage('assets/images/background.png'),
               fit: BoxFit.fill,
+              colorFilter: ColorFilter.mode(
+                const Color.fromARGB(255, 18, 131, 162),
+                BlendMode.color,
+              ),
             ),
           ),
-
-          //Loads the screen
           child: activeScreen,
         ),
       ),
