@@ -15,7 +15,7 @@
 
 ---
 
-<p align="center"> The Sleep Well project use the Wio Terminal to monitor the sleep environment and provide users with an estimate of how well they slept. Throughout the night, it collects data on temperature, humidity, light, and noise levels and assigns a score to sleep quality. 
+<p align="center"> Sleep Well project utilizes the Wio Terminal as a powerful tool for monitoring the sleep environment and providing users with valuable insights into their sleep quality. Through continuous data collection of temperature, humidity, light, and noise levels throughout the night, the system generates a comprehensive sleep quality score. This score serves as a reliable metric for users to evaluate the effectiveness of their sleep and make informed decisions to enhance their overall sleep experience. 
 
 
 
@@ -31,8 +31,9 @@
 - [Built Using](#built_using)
 - [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
+- [Authors](#authors)
+
 
 ## 🧐 About <a name = "about"></a>
 Our project aims to leverage the Wio Terminal, an Arduino-based device, to monitor sleep environments and provide users with valuable insights into their sleep quality. By collecting data on temperature, humidity, light, and noise levels throughout the night, our project enables users to gain a comprehensive understanding of their sleep patterns. The collected data is analyzed and presented to users through a simple score, indicating the quality of their sleep. By providing easy access to this information via a mobile application, our project empowers users to make informed decisions about their sleep habits and improve their overall sleep quality.
@@ -64,9 +65,6 @@ As metioned above, the project measures environmental variables during sleep to 
 
 * Flutter SDK <a href="https://docs.flutter.dev/get-started/install" target="Flutter">(installation guide)</a>  
 * Dart SDK <a href="https://dart.dev/get-dart" target="Dart">(installation guide)</a>  
-
-
-
 
 
 
