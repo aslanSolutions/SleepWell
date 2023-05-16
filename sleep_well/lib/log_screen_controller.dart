@@ -1,7 +1,6 @@
 import './values.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import './score_screen.dart';
 
 // class
 class LogScreenController extends StatelessWidget {
@@ -11,16 +10,6 @@ class LogScreenController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 3, 64, 120),
-              Colors.white,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         padding: const EdgeInsets.all(50),
         child: Column(
           children: [
@@ -43,10 +32,11 @@ class LogScreenController extends StatelessWidget {
                   gridData: FlGridData(
                     show: true,
                     getDrawingHorizontalLine: (value) => FlLine(
-                      color: Color.fromARGB(255, 0, 25, 94),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       strokeWidth: 1,
                     ),
                   ),
+                
                   borderData: FlBorderData(
                     show: true,
                     border: Border.all(),
@@ -56,11 +46,11 @@ class LogScreenController extends StatelessWidget {
                       dotData: FlDotData(show: true),
                       belowBarData: BarAreaData(
                           show: true,
-                          color:
-                              Color.fromARGB(255, 3, 91, 163).withOpacity(0.3)),
+                          color: Color.fromARGB(255, 18, 131, 162)
+                              .withOpacity(0.3)),
                       isCurved: true,
                       barWidth: 4,
-                      color: Color.fromARGB(255, 197, 77, 69),
+                      color: Color.fromARGB(255, 18, 131, 162),
                       spots: scores
                           .map((score) => FlSpot(
                               score.x.toDouble() + 1, score.y.toDouble()))
@@ -93,7 +83,7 @@ class LogScreen2 extends StatelessWidget {
           itemCount: scores.length,
           itemBuilder: (context, index) {
             return _buildCard(
-              (index + 1).toString(),
+              scores[index + 1].x.toString(),
               'Sleep Condition', // Here you would put the correct sleep condition. I'm just using a placeholder.
               scores[index].y.toString(),
               context,
