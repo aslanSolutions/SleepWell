@@ -13,4 +13,15 @@ class ScoreAlgorithm {
     }
     return result;
   }
+
+
+  int calculateTemperature(){
+
+    List <int> tempScoreList = converter.getTemperature();
+    int result2 = 0;
+    for(int i = 0; i<tempScoreList.length-1; i++){
+      result2 = ((result2 + tempScoreList[i])/i) as int;
+    }
+    return result2;
+  }
 }
