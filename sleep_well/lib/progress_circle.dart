@@ -47,10 +47,12 @@ class _ProgressCircleState extends State<ProgressCircle>
 
   // the circle should change colors
   // todo assigned to Qutaiba
+  
 
   @override
   Widget build(BuildContext context) {
     return Center(
+      
       child: CircularPercentIndicator(
         animation: true,
         animateFromLastPercent: true,
