@@ -21,7 +21,21 @@ class Converter {
     loudness.add(int.parse(valuesList[1].trim()));
     temperature.add(int.parse(valuesList[2].trim()));
     humidity.add(int.parse(valuesList[3].trim()));
-    print(light);
-    print(temperature);
+  }
+
+  List<int> getLight() {
+    return light;
+  }
+
+  List<int> getLoudness() {
+    return loudness;
+  }
+
+  List<int> getTemperature() {
+    return temperature;
+  }
+
+  List<int> getHumidity() {
+    return humidity;
   }
 }
