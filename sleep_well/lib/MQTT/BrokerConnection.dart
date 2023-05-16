@@ -10,7 +10,7 @@ import 'package:flutter/cupertino.dart';
 class BrokerConnection {
   final String TOPIC = 'wio/values';
   final String LOCAL_HOST = '';
-  final int PORT = 8081;
+  final int PORT = 8081; //Connecting port for mqtt-dart is 8081
   final CLIENT_ID = 'Group-1';
 
   late MqttServerClient client =
@@ -19,23 +19,26 @@ class BrokerConnection {
 
   BrokerConnection(BuildContext context) {
     this.build = context;
+    _connect();
   }
 
   /// Connecting functionality of the MQTT client to the server.
   Future<int> _connect() async {
     client.logging(on: false);
     client.setProtocolV311();
-    client.keepAlivePeriod = 100;
-
-    client.connectTimeoutPeriod = 2000;
-
+    client.keepAlivePeriod = 20;
+    client.connectTimeoutPeriod = 5000;
+    client.autoReconnect = true; //set auto reconnect
+    client.resubscribeOnAutoReconnect = false;
     client.onDisconnected = onDisconnected;
     client.onConnected = onConnected;
-
     client.onSubscribed = onSubscribed;
+    client.onAutoReconnect = onAutoReconnect;
+    client.onAutoReconnected = onAutoReconnected;
 
     final connectionMess = MqttConnectMessage()
-        .withWillTopic('willTopic')
+        .withClientIdentifier(CLIENT_ID)
+        .withWillTopic(TOPIC)
         .withWillMessage('Group 1 connection platform')
         .startClean()
         .withWillQos(MqttQos.atLeastOnce);
@@ -95,6 +98,10 @@ class BrokerConnection {
     print('Unsubscribing');
     client.unsubscribe(topic);
 
+    //Sleeping for a while
+    print('Sleeping....');
+    await MqttUtilities.asyncSleep(60);
+
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);
     print('Disconnecting....');
@@ -123,5 +130,17 @@ class BrokerConnection {
 
   void onConnected() {
     print('Client connection was successful');
+  }
+
+  //Auto Reconnect had connected callback
+  void onAutoReconnected() {
+    print(
+        'onAutoReconnected client callback - Client auto reconnection sequence has completed');
+  }
+
+  //Auto Reconnecting
+  void onAutoReconnect() {
+    print(
+        'onAutoReconnect client callback - Client auto reconnection sequence will start');
   }
 }
