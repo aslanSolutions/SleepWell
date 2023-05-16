@@ -63,8 +63,7 @@ As metioned above, the project measures environmental variables during sleep to 
 ## Prerequisites <a name = "Prerequisites"></a>
 
 * Flutter SDK <a href="https://docs.flutter.dev/get-started/install" target="Flutter">(installation guide)</a>  
-* Dart SDK (installation guide)
-
+* Dart SDK <a href="https://dart.dev/get-dart" target="Dart">(installation guide)</a>  
 
 
 
