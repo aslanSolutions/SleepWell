@@ -23,9 +23,11 @@
 
 ## 📝 Table of Contents
 - [About](#about)
+- [Features](#Features)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
+- [Prerequisites](#Prerequisites)
 - [Built Using](#built_using)
 - [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
@@ -36,8 +38,13 @@
 Our project aims to leverage the Wio Terminal, an Arduino-based device, to monitor sleep environments and provide users with valuable insights into their sleep quality. By collecting data on temperature, humidity, light, and noise levels throughout the night, our project enables users to gain a comprehensive understanding of their sleep patterns. The collected data is analyzed and presented to users through a simple score, indicating the quality of their sleep. By providing easy access to this information via a mobile application, our project empowers users to make informed decisions about their sleep habits and improve their overall sleep quality.
 
 
-## Usage <a name = "usage"></a>
-As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
+## ⌨️ Features <a name = "Features"></a>
+* Real-time monitoring of temperature, humidity, light, and noise levels during sleep.
+* Data collection and storage for analysis.
+* Calculation of sleep quality score based on collected data.
+* Visualization of sleep patterns and trends.
+* Notifications and alerts for abnormal sleep conditions.
+* User-friendly mobile application interface.
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -49,12 +56,22 @@ Here are steps to getting started
 4. It is required to clone the repository to work on it. (Page is coming)
 5. The project requires the use of MQTT protocol, and the developers have used mosquitto for this purpose.(Page is coming)
 
-### Prerequisites
-What things you need to install the software and how to install them.
+## Usage <a name = "usage"></a>
+As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
+
+
+## Prerequisites <a name = "Prerequisites"></a>
+
+Flutter SDK (installation guide)
+Dart SDK (installation guide)
 
 ```
 https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Instruction
 ```
+
+
+
+
 
 ### Installing
 
