@@ -26,13 +26,13 @@ class BrokerConnection {
     client.logging(on: false);
     client.setProtocolV311();
     client.keepAlivePeriod = 100;
-
     client.connectTimeoutPeriod = 2000;
-
+    client.autoReconnect = true; //set auto reconnect
+    client.resubscribeOnAutoReconnect = false;
     client.onDisconnected = onDisconnected;
     client.onConnected = onConnected;
-
     client.onSubscribed = onSubscribed;
+    
 
     final connectionMess = MqttConnectMessage()
         .withWillTopic('willTopic')
