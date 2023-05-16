@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';
 import 'package:lottie/lottie.dart';
+//import 'MQTT/BrokerConnection.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(this.switchToScore, this.switchTosleep, this.switchToLog,
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   late AnimationController _controller;
   late AnimationController _controller2;
+  //late BrokerConnection _connection;
 
   final void Function() switchToScore;
   final void Function() switchTosleep;
@@ -55,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       marked = true;
       _controller.forward();
       await Future.delayed(const Duration(milliseconds: 900));
+      //_connection = BrokerConnection(context);
       switchTosleep();
       marked = false;
       _controller.reset();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:lottie/lottie.dart';
 import './labels.dart';
+import 'MQTT/BrokerConnection.dart';
 
 class SleepScreen extends StatefulWidget {
   SleepScreen(this.switchToScore, {Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class SleepScreen extends StatefulWidget {
 class _SleepScreenState extends State<SleepScreen> {
   _SleepScreenState(this.switchToScore);
 
+  late BrokerConnection _connection;
   final void Function() switchToScore;
 
   Container buildBackground() {
@@ -33,6 +35,7 @@ class _SleepScreenState extends State<SleepScreen> {
 
   @override
   Widget build(BuildContext context) {
+    _connection = BrokerConnection(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -97,6 +100,7 @@ class _SleepScreenState extends State<SleepScreen> {
                 ),
                 onSubmit: () {
                   switchToScore();
+                  _connection.disConnect();
                 },
               ),
             ),

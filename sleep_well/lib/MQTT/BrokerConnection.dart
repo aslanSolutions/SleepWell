@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 
 class BrokerConnection {
   final String TOPIC = 'wio/values';
-  final String LOCAL_HOST = '';
+  final String LOCAL_HOST = '192.168.0.102';
   final int PORT = 8081; //Connecting port for mqtt-dart is 8081
   final CLIENT_ID = 'Group-1';
 
@@ -142,5 +142,9 @@ class BrokerConnection {
   void onAutoReconnect() {
     print(
         'onAutoReconnect client callback - Client auto reconnection sequence will start');
+  }
+
+  void disConnect() {
+    client.disconnect();
   }
 }
