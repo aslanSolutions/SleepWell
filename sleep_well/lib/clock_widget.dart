@@ -8,9 +8,7 @@ class ClockWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 430,
-      left: 50,
+    return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -21,8 +19,11 @@ class ClockWidget extends StatelessWidget {
             height: 50,
           ),
           Text(
-            ' Sleep time: $hoursSlept hours',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ' $hoursSlept hours',
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 3, 64, 120)),
           ),
         ],
       ),

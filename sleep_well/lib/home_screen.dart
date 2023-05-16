@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Row(
               children: [
                 Transform.translate(
-                  offset: const Offset(-40, -60),
+                  offset: const Offset(-40, -22),
                   child: GestureDetector(
                     onTap: () {
                       _onBedTap(context);
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   width: 120,
                 ),
                 Transform.translate(
-                  offset: const Offset(-15, -68),
+                  offset: const Offset(-15, -30),
                   child: GestureDetector(
                     onTap: () {
                       _onLogTap(context);
@@ -153,21 +153,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ],
         ),
-        Positioned(
-          bottom: 10,
-          left: 50,
-          right: 0,
-          child: Transform.translate(
-            offset: const Offset(0, -50),
-            child: TakeANapLabel(),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: FractionallySizedBox(
+            heightFactor: 0.13, // adjust the factor as needed
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(left: 50.0), // adjust padding as needed
+              child: TakeANapLabel(),
+            ),
           ),
         ),
-        Positioned(
-          bottom: 10,
-          right: 40,
-          child: Transform.translate(
-            offset: const Offset(0, -50),
-            child: SleepLogLabel(),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: FractionallySizedBox(
+            heightFactor: 0.13, // adjust the factor as needed
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  right: 40.0), // adjust padding as needed
+              child: SleepLogLabel(),
+            ),
           ),
         ),
       ],

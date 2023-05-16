@@ -6,7 +6,11 @@ class TakeANapLabel extends StatelessWidget {
     return const Text(
       "Take a nap ",
       textAlign: TextAlign.left,
-      style: TextStyle(fontSize: 20, color: Colors.black),
+      style: TextStyle(
+        fontSize: 20,
+        color: Color.fromARGB(255, 3, 64, 120),
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
@@ -17,7 +21,11 @@ class SleepLogLabel extends StatelessWidget {
     return const Text(
       "Sleep Log ",
       textAlign: TextAlign.left,
-      style: TextStyle(fontSize: 20, color: Colors.black),
+      style: TextStyle(
+        fontSize: 20,
+        color: Color.fromARGB(255, 3, 64, 120),
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }

@@ -14,7 +14,7 @@ class LogScreenController extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 13, 146, 255),
+              Color.fromARGB(255, 3, 64, 120),
               Colors.white,
             ],
             begin: Alignment.topCenter,
@@ -90,11 +90,10 @@ class LogScreen2 extends StatelessWidget {
       title: 'Sleep Well',
       home: Scaffold(
         body: ListView.builder(
-  
           itemCount: scores.length,
           itemBuilder: (context, index) {
             return _buildCard(
-              scores[index+1].x.toString(),
+              (index + 1).toString(),
               'Sleep Condition', // Here you would put the correct sleep condition. I'm just using a placeholder.
               scores[index].y.toString(),
               context,
