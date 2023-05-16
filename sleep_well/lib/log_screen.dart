@@ -13,56 +13,56 @@ class LogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 3, 64, 120),
-        elevation: 0,
-        title: const Text("S L E E P W E L L"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: goBack,
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        const SizedBox(
+          height: 70,
         ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: LogScreenController(values),
-          ),
-          Expanded(
-            child: LogScreen2(values, switchToScore),
-          ),
-        ],
-      ),
+        Row(
+          children: [
+            const SizedBox(
+              width: 10,
+            ),
+            SizedBox(
+              width: 40,
+              height: 40,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 8, 102, 128),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                  iconSize: 20,
+                  color: const Color.fromARGB(255, 0, 0, 0),
+                  onPressed: goBack,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: (screenWidth / 2) - 105,
+            ),
+            const Text(
+              "History",
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        Expanded(
+          child: LogScreenController(values),
+        ),
+        Expanded(
+          child: LogScreen2(values, switchToScore),
+        ),
+      ],
     );
   }
 }
-
-
-
-/*import './log_screen_controller.dart';
-import './values.dart';
-import 'package:flutter/material.dart';
-
-class LogScreen extends StatelessWidget {
-  const LogScreen(this.switchToScore, {super.key});
-  final void Function() switchToScore;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue[300],
-        elevation: 0,
-        title: const Text("S L E E P W E L L"),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: LogScreenController(values),
-          ),
-          Expanded(child: LogScreen2(values, switchToScore))
-        ],
-      ),
-    );
-  }
-}*/
