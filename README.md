@@ -62,12 +62,10 @@ As metioned above, the project measures environmental variables during sleep to 
 
 ## Prerequisites <a name = "Prerequisites"></a>
 
-Flutter SDK (installation guide)
-Dart SDK (installation guide)
+* Flutter SDK <a href="https://docs.flutter.dev/get-started/install" target="Flutter">(installation guide)</a>  
+* Dart SDK (installation guide)
 
-```
-https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Instruction
-```
+
 
 
 
