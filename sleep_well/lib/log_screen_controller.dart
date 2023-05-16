@@ -14,7 +14,7 @@ class LogScreenController extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 13, 146, 255),
+              Color.fromARGB(255, 3, 64, 120),
               Colors.white,
             ],
             begin: Alignment.topCenter,

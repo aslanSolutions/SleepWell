@@ -15,7 +15,7 @@ class LogScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Color.fromARGB(255, 3, 64, 120),
         elevation: 0,
         title: const Text("S L E E P W E L L"),
         leading: IconButton(

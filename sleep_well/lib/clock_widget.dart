@@ -19,7 +19,7 @@ class ClockWidget extends StatelessWidget {
             height: 50,
           ),
           Text(
-            '$hoursSlept hours',
+            ' $hoursSlept hours',
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
