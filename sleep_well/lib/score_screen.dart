@@ -25,7 +25,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   Container buildBackground() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.blue, Colors.white],
         ),
@@ -50,7 +50,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                   height: 40,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 8, 102, 128),
+                      color: const Color.fromARGB(255, 8, 102, 128),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: IconButton(
@@ -65,7 +65,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                 const Text(
                   "Score",
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 35,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

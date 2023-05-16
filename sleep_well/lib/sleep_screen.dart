@@ -23,8 +23,8 @@ class _SleepScreenState extends State<SleepScreen> {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 1, 69, 125),
-            Color.fromARGB(255, 0, 0, 0)
+            Color.fromARGB(255, 3, 47, 83),
+            Color.fromARGB(255, 14, 1, 47)
           ],
         ),
       ),
@@ -35,12 +35,19 @@ class _SleepScreenState extends State<SleepScreen> {
   @override
   Widget build(context) {
     _connection = BrokerConnection(context);
+    final screenWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
+        buildBackground(),
+        SizedBox(
+          height: 650,
+          width: screenWidth,
+          child: Image.asset("assets/images/background2.png"),
+        ),
         Column(
           children: [
             const SizedBox(
-              height: 70,
+              height: 100,
             ),
             const Text(
               "SLEEP WELL",
@@ -52,7 +59,7 @@ class _SleepScreenState extends State<SleepScreen> {
             ),
             Lottie.asset(
               "assets/animations/Night-Moon.json",
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.cover,
             ),
           ],
         ),
@@ -73,24 +80,44 @@ class _SleepScreenState extends State<SleepScreen> {
           left: 0,
           right: 0,
           bottom: -250,
-          child: SlideAction(
-            borderRadius: 12,
-            elevation: 0,
-            innerColor: Colors.yellow,
-            outerColor: const Color.fromARGB(255, 0, 44, 80),
-            sliderButtonIcon: const Icon(Icons.mode_night),
-            text: "Slide to wake up",
-            submittedIcon: const Icon(
-              Icons.wb_sunny,
-              color: Colors.yellow,
+          child: SizedBox(
+            width: 100,
+            child: SlideAction(
+              borderRadius: 12,
+              elevation: 0,
+              innerColor: Colors.yellow,
+              outerColor: const Color.fromARGB(255, 0, 44, 80),
+              sliderButtonIcon: const Icon(Icons.mode_night),
+              text: "Slide to wake up",
+              submittedIcon: const Icon(
+                Icons.wb_sunny,
+                color: Colors.yellow,
+              ),
+              onSubmit: () {
+                switchToScore();
+                _connection.disConnect();
+              },
             ),
-            onSubmit: () {
-              switchToScore();
-              _connection.disConnect();
-            },
           ),
         ),
       ],
     );
   }
 }
+
+
+/*
+Container buildBackground() {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 1, 69, 125),
+            Color.fromARGB(255, 0, 0, 0)
+          ],
+        ),
+      ),
+      constraints: const BoxConstraints.expand(),
+    );
+  }
+  */
