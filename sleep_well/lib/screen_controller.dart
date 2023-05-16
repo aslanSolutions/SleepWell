@@ -57,14 +57,13 @@ class _ScreenControllerState extends State<ScreenController> {
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
-        //appBar: const MyAppBar(title: 'S L E E P W E L L'),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/background.png'),
               fit: BoxFit.fill,
               colorFilter: ColorFilter.mode(
-                const Color.fromARGB(255, 18, 131, 162),
+                Color.fromARGB(255, 18, 131, 162),
                 BlendMode.color,
               ),
             ),
