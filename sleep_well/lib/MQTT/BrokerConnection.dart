@@ -6,16 +6,18 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
+import 'package:sleep_well/Back-End/Converter.dart';
 
 class BrokerConnection {
   final String TOPIC = 'wio/values';
-  final String LOCAL_HOST = '';
+  final String LOCAL_HOST = '192.168.0.102';
   final int PORT = 8081; //Connecting port for mqtt-dart is 8081
   final CLIENT_ID = 'Group-1';
 
   late MqttServerClient client =
       MqttServerClient.withPort(LOCAL_HOST, CLIENT_ID, PORT);
   late BuildContext build;
+  Converter converter = Converter();
 
   BrokerConnection(BuildContext context) {
     this.build = context;
@@ -29,7 +31,7 @@ class BrokerConnection {
     client.keepAlivePeriod = 20;
     client.connectTimeoutPeriod = 5000;
     client.autoReconnect = true; //set auto reconnect
-    client.resubscribeOnAutoReconnect = false;
+    client.resubscribeOnAutoReconnect = true;
     client.onDisconnected = onDisconnected;
     client.onConnected = onConnected;
     client.onSubscribed = onSubscribed;
@@ -37,8 +39,8 @@ class BrokerConnection {
     client.onAutoReconnected = onAutoReconnected;
 
     final connectionMess = MqttConnectMessage()
-        .withClientIdentifier(CLIENT_ID)
-        .withWillTopic(TOPIC)
+        .withClientIdentifier('AppClient')
+        .withWillTopic('willTopic')
         .withWillMessage('Group 1 connection platform')
         .startClean()
         .withWillQos(MqttQos.atLeastOnce);
@@ -78,6 +80,7 @@ class BrokerConnection {
       print(
           'Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
       print('');
+      converter.convert(pt);
     });
 
     client.published!.listen((MqttPublishMessage message) {
@@ -94,13 +97,13 @@ class BrokerConnection {
     print('Publishing our topic');
     client.publishMessage(TOPIC, MqttQos.exactlyOnce, builder.payload!);
 
+    //Sleeping for a while
+    print('Sleeping....');
+    await MqttUtilities.asyncSleep(100);
+
     //unsubscribe and exit gracefully
     print('Unsubscribing');
     client.unsubscribe(topic);
-
-    //Sleeping for a while
-    print('Sleeping....');
-    await MqttUtilities.asyncSleep(60);
 
     // Wait for the unsubscribe message from the broker
     await MqttUtilities.asyncSleep(2);
