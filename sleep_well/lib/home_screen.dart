@@ -5,15 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'labels.dart';
 import 'package:lottie/lottie.dart';
+import './sleep_screen.dart';
 //import 'MQTT/BrokerConnection.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen(this.switchToScore, this.switchTosleep, this.switchToLog,
+  HomeScreen(this.switchToScore, this.switchTosleep, this.switchToLog,
+      this.elapsedTimeNotifier,
       {Key? key})
       : super(key: key);
   final void Function() switchToScore;
   final void Function() switchTosleep;
   final void Function() switchToLog;
+  final ValueNotifier<String> elapsedTimeNotifier;
 
   @override
   // ignore: library_private_types_in_public_api, no_logic_in_create_state
@@ -110,7 +113,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             const SizedBox(
               height: 20,
             ),
-            const ClockWidget(hoursSlept: 3),
+            ValueListenableBuilder<String>(
+              valueListenable: widget.elapsedTimeNotifier,
+              builder: (context, value, child) {
+                return ClockWidget(
+                    lastElapsedTime: value); // pass the value here
+              },
+            ),
             const SizedBox(
               height: 120,
             ),

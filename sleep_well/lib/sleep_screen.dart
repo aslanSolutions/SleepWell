@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:lottie/lottie.dart';
 import 'MQTT/BrokerConnection.dart';
+import './stopwatch.dart';
 
 class SleepScreen extends StatefulWidget {
-  SleepScreen(this.switchToScore, {Key? key}) : super(key: key);
+  const SleepScreen(this.switchToScore, this.elapsedTimeNotifier, {Key? key})
+      : super(key: key);
   final void Function() switchToScore;
+  final ValueNotifier<String> elapsedTimeNotifier; // Add this line
 
   @override
   // ignore: no_logic_in_create_state
-  State<SleepScreen> createState() => _SleepScreenState(switchToScore);
+  State<SleepScreen> createState() => _SleepScreenState(
+      switchToScore, elapsedTimeNotifier); // Pass elapsedTimeNotifier here
 }
 
 class _SleepScreenState extends State<SleepScreen> {
-  _SleepScreenState(this.switchToScore);
+  _SleepScreenState(this.switchToScore, this.elapsedTimeNotifier);
 
   late BrokerConnection _connection;
   final void Function() switchToScore;
+  final ValueNotifier<String> elapsedTimeNotifier; // Replace this line
 
   Container buildBackground() {
     return Container(
@@ -44,6 +49,15 @@ class _SleepScreenState extends State<SleepScreen> {
           width: screenWidth,
           child: Image.asset("assets/images/background2.png"),
         ),
+        Positioned(
+          bottom: 150,
+          right: 112,
+          child: CountUpTimerPage(
+            onTimeRecorded: (time) {
+              elapsedTimeNotifier.value = time; // Updated this line
+            },
+          ),
+        ),
         Column(
           children: [
             const SizedBox(
@@ -67,7 +81,7 @@ class _SleepScreenState extends State<SleepScreen> {
           top: 0,
           left: 0,
           right: 0,
-          bottom: 0,
+          bottom: -750,
           child: Lottie.asset(
             "assets/animations/Sleep.json",
             fit: BoxFit.contain,
@@ -104,20 +118,3 @@ class _SleepScreenState extends State<SleepScreen> {
     );
   }
 }
-
-
-/*
-Container buildBackground() {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 1, 69, 125),
-            Color.fromARGB(255, 0, 0, 0)
-          ],
-        ),
-      ),
-      constraints: const BoxConstraints.expand(),
-    );
-  }
-  */
