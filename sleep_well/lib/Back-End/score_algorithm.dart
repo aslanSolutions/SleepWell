@@ -33,7 +33,7 @@ class ScoreAlgorithm {
   }
 
   int calculateHumidity() {
-    List<int> HumidityScoreList = converter.getHumidity();
+    List<int> humidityScoreList = converter.getHumidity();
     int result = 0;
     for (int i = 0; i < HumidityScoreList.length - 1; i++) {
       result = ((result + HumidityScoreList[i]) / i) as int;

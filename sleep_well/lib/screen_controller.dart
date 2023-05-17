@@ -1,8 +1,8 @@
 import 'package:sleep_well/log_screen.dart';
 import 'package:sleep_well/score_screen.dart';
-import 'package:sleep_well/second_screen.dart';
 import 'package:sleep_well/sleep_screen.dart';
 import './home_screen.dart';
+import './loading_screen.dart';
 import 'package:flutter/material.dart';
 
 //This class handles switching screen and rendring the new UI when a new screen is displayed
@@ -25,6 +25,15 @@ class _ScreenControllerState extends State<ScreenController> {
     activeScreen = HomeScreen(
         switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
     super.initState();
+  }
+
+
+  void navigateToHomeScreen() {
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      setState(() {
+        activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
+      });
+    });
   }
 
   // Switch to the --- screen
