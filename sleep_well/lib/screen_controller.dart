@@ -27,11 +27,11 @@ class _ScreenControllerState extends State<ScreenController> {
     super.initState();
   }
 
-
   void navigateToHomeScreen() {
     Future.delayed(const Duration(milliseconds: 2500), () {
       setState(() {
-        activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
+        activeScreen = HomeScreen(
+            switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
       });
     });
   }
