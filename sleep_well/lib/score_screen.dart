@@ -2,9 +2,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import './progress_circle.dart';
 import './progress_bar.dart';
+import './stopwatch.dart';
 
 class ScoreScreen extends StatefulWidget {
-  const ScoreScreen(this.goBack, {super.key});
+  ScoreScreen(this.goBack, {super.key});
   final void Function() goBack;
 
   @override

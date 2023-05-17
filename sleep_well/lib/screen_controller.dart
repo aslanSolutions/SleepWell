@@ -17,12 +17,13 @@ class ScreenController extends StatefulWidget {
 
 class _ScreenControllerState extends State<ScreenController> {
   Widget? activeScreen;
-
+  ValueNotifier<String> elapsedTimeNotifier = ValueNotifier<String>('00:00:00');
   //Initialize the first screen that will be loaded
+
   @override
   void initState() {
-    activeScreen = const LoadingScreen();
-    navigateToHomeScreen();
+    activeScreen = HomeScreen(
+        switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
     super.initState();
   }
 
@@ -39,7 +40,7 @@ class _ScreenControllerState extends State<ScreenController> {
 
   void switchToSleep() {
     setState(() {
-      activeScreen = SleepScreen(switchToScore);
+      activeScreen = SleepScreen(switchToScore, elapsedTimeNotifier);
     });
   }
 
@@ -57,7 +58,8 @@ class _ScreenControllerState extends State<ScreenController> {
 
   void switchToHome() {
     setState(() {
-      activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
+      activeScreen = HomeScreen(
+          switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
     });
   }
 

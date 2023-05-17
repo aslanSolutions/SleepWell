@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class ClockWidget extends StatelessWidget {
-  final double hoursSlept;
+  final String lastElapsedTime;
 
-  const ClockWidget({required this.hoursSlept, Key? key}) : super(key: key);
+  const ClockWidget({required this.lastElapsedTime, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class ClockWidget extends StatelessWidget {
             height: 50,
           ),
           Text(
-            ' $hoursSlept hours',
+            ' $lastElapsedTime',
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
