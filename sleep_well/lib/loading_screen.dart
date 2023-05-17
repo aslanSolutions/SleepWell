@@ -39,36 +39,48 @@ class _LoadingScreenState extends State<LoadingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
-      body: Center(
-        child: Stack(
-          children: [
-            AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return Transform.scale(
-                  scale: 1.0 - _animation.value,
-                  child: Opacity(
-                    opacity: 1.0 - _animation.value,
-                    child: child,
-                  ),
-                );
-              },
-              child: Image.asset(
-                'assets/images/logo.png',
+      backgroundColor: Colors.white,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+              center: Alignment.center,
+              radius: 1.5,
+            colors: [
+              Color.fromARGB(255, 3, 47, 83),
+              Color.fromARGB(255, 14, 1, 47)
+            ],
+          ),
+        ),
+        child: Center(
+          child: Stack(
+            children: [
+              AnimatedBuilder(
+                animation: _animation,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: 1.0 - _animation.value,
+                    child: Opacity(
+                      opacity: 1.0 - _animation.value,
+                      child: child,
+                    ),
+                  );
+                },
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 250,
+                  height: 250,
+                ),
+              ),
+              const SizedBox(height: 16),
+              const SizedBox(
                 width: 250,
                 height: 250,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                ),
               ),
-            ),
-            const SizedBox(height: 16),
-            const SizedBox(
-              width: 250,
-              height: 250,
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
