@@ -22,8 +22,8 @@ class _ScreenControllerState extends State<ScreenController> {
 
   @override
   void initState() {
-    activeScreen = HomeScreen(
-        switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
+    activeScreen = const LoadingScreen();
+    navigateToHomeScreen();
     super.initState();
   }
 
@@ -31,7 +31,8 @@ class _ScreenControllerState extends State<ScreenController> {
   void navigateToHomeScreen() {
     Future.delayed(const Duration(milliseconds: 2500), () {
       setState(() {
-        activeScreen = HomeScreen(switchToScore, switchToSleep, switchToLog);
+        activeScreen = HomeScreen(
+          switchToScore, switchToSleep, switchToLog, elapsedTimeNotifier);
       });
     });
   }
