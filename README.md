@@ -1,7 +1,6 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img style =  " align="center" src="https://i.imgur.com/26s7duQ.png" alt="Project logo"></a>
-</p>
+<div style="display: flex; justify-content: center;">
+  <img src="https://i.imgur.com/26s7duQ.png" alt="Project logo" style="max-width: 500px;">
+</div>
 
 <h3 align="center">Sleep Well</h3>
 
