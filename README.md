@@ -87,7 +87,7 @@ To install and run this project, follow these steps:
 
 
 ## Acknowledgement <a name = "acknowledgement"></a>
-We want to give a shout-out to everyone who helped us out with this project! First off, a huge thank you to our amazing proffessor and his loyal TAs, Francisco Gomes, Luiz Rosane and Nicole Quinstedt, for being there every step of the way with their awesome advice and encouragement. We couldn't have done it without you! Also, big ups to all of our classmates and friends who gave us feedback and support along the way. You guys are the best! And finally, a special thanks to Göteborg's univercity for hooking us up with the cash to make this happen. We appreciate your support more than you know. Last but not least, our group members with all the hard work they did during the course period.
+We want to give a shout-out to everyone who helped us out with this project! First off, a huge thank you to our amazing proffessor and his loyal TAs, Francisco Gomes, Luiz Rosane and Nicole Quinstedt, for being there every step of the way with their awesome advice and encouragement. We couldn't have done it without you! Also, big ups to all of our classmates and friends who gave us feedback and support along the way. You guys are the best! And finally, a special thanks to Göteborg's University for hooking us up with the cash to make this happen. We appreciate your support more than you know. Last but not least, our group members with all the hard work they did during the course period.
 Thanks again, everyone!
 
 
