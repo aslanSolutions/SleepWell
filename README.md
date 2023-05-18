@@ -1,4 +1,4 @@
-<div style="display: block; justify-content: center; aligh: center">
+<div style="display: block; justify-content: center; align: center">
   <img src="https://i.imgur.com/26s7duQ.png" alt="Project logo" width="500" height= "500" >
 </div>
 
