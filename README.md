@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center;">
-  <img src="https://i.imgur.com/26s7duQ.png" alt="Project logo" style="width: 300px; height: 200px;">
+  <img src="https://i.imgur.com/26s7duQ.png" alt="Project logo" width="300" height= "200">
 </div>
 
 
