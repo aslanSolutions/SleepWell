@@ -1,43 +1,90 @@
 import './Converter.dart';
+import './percentage.dart';
+
+Converter converter = Converter();
+double result = 0;
+int counter = 0;
+double percent = 0;
+late double total;
 
 class ScoreAlgorithm {
   ScoreAlgorithm();
 
-  Converter converter = Converter();
-
-  int calcluateLight() {
+  //Calculating the light percent
+  double calcluateLight() {
     List<int> lightScoreList = converter.getLight();
-    int result = 0;
+    total = 7.0;
     for (int i = 0; i < lightScoreList.length - 1; i++) {
-      result = ((result + lightScoreList[i]) / i) as int;
+      result = result + lightScoreList[i];
+      counter = i;
     }
-    return result;
+    result = result / counter;
+
+    if (result > total) {
+      percent = Percentage().calculator2(result, total);
+    } else {
+      percent = Percentage().calculator1(result, total);
+    }
+    return percent;
   }
 
-  int calculateTemperature() {
+  //Calculating the temperature percent
+  double calculateTemperature() {
     List<int> tempScoreList = converter.getTemperature();
-    int result2 = 0;
+    total = 17.6;
     for (int i = 0; i < tempScoreList.length - 1; i++) {
-      result2 = ((result2 + tempScoreList[i]) / i) as int;
+      result = result + tempScoreList[i];
     }
-    return result2;
+    result = result / counter;
+
+    if (result > total) {
+      percent = Percentage().calculator2(result, total);
+    } else {
+      percent = Percentage().calculator1(result, total);
+    }
+    return percent;
   }
 
-  int calculateLoudness() {
+  //Calculating the loud percent
+  double calculateLoudness() {
     List<int> loudnessScoreList = converter.getLoudness();
-    int result = 0;
+    total = 30;
     for (int i = 0; i < loudnessScoreList.length - 1; i++) {
-      result = ((result + loudnessScoreList[i]) / i) as int;
+      result = result + loudnessScoreList[i];
     }
-    return result;
+    result = result / counter;
+
+    if (result > total) {
+      percent = Percentage().calculator2(result, total);
+    } else {
+      percent = Percentage().calculator1(result, total);
+    }
+    return percent;
   }
 
-  int calculateHumidity() {
+  //Calculating the humidity percent
+  double calculateHumidity() {
     List<int> humidityScoreList = converter.getHumidity();
-    int result = 0;
+    total = 50;
     for (int i = 0; i < humidityScoreList.length - 1; i++) {
-      result = ((result + humidityScoreList[i]) / i) as int;
+      result = result + humidityScoreList[i];
     }
-    return result;
+    result = result / counter;
+
+    if (result > total) {
+      percent = Percentage().calculator2(result, total);
+    } else {
+      percent = Percentage().calculator1(result, total);
+    }
+    return percent;
+  }
+
+  //Calculating the all sensors percent
+  double totalPercent() {
+    percent = ((calcluateLight() / 4) +
+        (calculateHumidity() / 4) +
+        (calculateLoudness() / 4) +
+        (calculateTemperature() / 4));
+    return percent;
   }
 }

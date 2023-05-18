@@ -2,18 +2,13 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 
-late List<int> light;
-late List<int> loudness;
-late List<int> temperature;
-late List<int> humidity;
+List<int> light = List<int>.filled(0, 0, growable: true);
+List<int> loudness = List<int>.filled(0, 0, growable: true);
+List<int> temperature = List<int>.filled(0, 0, growable: true);
+List<int> humidity = List<int>.filled(0, 0, growable: true);
 
 class Converter {
-  Converter() {
-    light = List<int>.filled(0, 0, growable: true);
-    loudness = List<int>.filled(0, 0, growable: true);
-    temperature = List<int>.filled(0, 0, growable: true);
-    humidity = List<int>.filled(0, 0, growable: true);
-  }
+  Converter();
 
   void convert(String values) {
     var valuesList = values.split(', ');

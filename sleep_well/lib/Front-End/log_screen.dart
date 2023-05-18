@@ -1,10 +1,9 @@
-import 'package:sleep_well/home_screen.dart';
-import 'package:sleep_well/score_screen.dart';
-
+import './home_screen.dart';
+import './score_screen.dart';
 import './log_screen_controller.dart';
 import './values.dart';
 import 'package:flutter/material.dart';
-import 'package:sleep_well/screen_controller.dart';
+import './screen_controller.dart';
 
 class LogScreen extends StatelessWidget {
   const LogScreen(this.switchToScore, this.goBack, {super.key});
