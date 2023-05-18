@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img style = "display:block;margin-left:auto; margin-right:auto; " src="https://i.imgur.com/2L2ftQw" alt="Project logo"></a>
+ <img style = "display:block;margin-left:auto; margin-right:auto; " "[img]https://i.imgur.com/2L2ftQw.png[/img]" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Sleep Well</h3>
