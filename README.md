@@ -53,15 +53,15 @@ Our project aims to leverage the Wio Terminal, an Arduino-based device, to monit
 
 To get started with your GitLab project for Arduino and Flutter, follow these steps:
 
-1. Set up <a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"> Arduino</a> and Flutter <a href="https://docs.flutter.dev/get-started/install"> Flutter</a> frameworks: Before proceeding, make sure you have both Arduino and Flutter frameworks installed on your system.
+1. Set up <a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"> Arduino</a> and <a href="https://docs.flutter.dev/get-started/install"> Flutter</a> frameworks: Before proceeding, make sure you have both Arduino and Flutter frameworks installed on your system.
 
 2. Prepare Wio Seeed Terminal: To upload code to the Wio Seeed Terminal using Arduino IDE, ensure you have the terminal device connected to your system. Additionally, connect the necessary sensors to the terminal, as they will be used in the project. (Page is coming)
 
-3. Install Git: Before utilizing GitLab, ensure that Git is installed on your device. Follow the installation instructions relevant to your operating system. (Page is coming)
+3. Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" Git</a> : Before utilizing GitLab, ensure that Git is installed on your device. 
 
-4. Clone the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. (Page is coming)
+4. Clone <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository" </a> the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. 
 
-5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up mosquitto to enable communication within the project. (Page is coming)
+5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up mosquitto <a href="https://hub.docker.com/_/eclipse-mosquitto" <a/> to enable communication within the project.
 
 
 
