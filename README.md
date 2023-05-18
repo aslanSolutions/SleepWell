@@ -57,7 +57,7 @@ To get started with your GitLab project for Arduino and Flutter, follow these st
 
 2. Prepare Wio Seeed Terminal: To upload code to the Wio Seeed Terminal using Arduino IDE, ensure you have the terminal device connected to your system. Additionally, connect the necessary sensors to the terminal, as they will be used in the project.
 
-3. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Before utilizing GitLab, ensure that Git is installed on your device. 
+3. Before utilizing GitLab, ensure that [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed on your device. 
 
 4. [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. 
 
