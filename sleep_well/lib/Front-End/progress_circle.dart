@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:sleep_well/Front-End/color_configurer.dart';
 
 class ProgressCircle extends StatefulWidget {
   const ProgressCircle(this.progressValue, this.radius, {Key? key})
@@ -28,7 +29,7 @@ class _ProgressCircleState extends State<ProgressCircle>
   void initState() {
     super.initState();
     _scoreController = AnimationController(
-        duration: const Duration(milliseconds: 1000), vsync: this);
+        duration: const Duration(milliseconds: 2000), vsync: this);
     _scoreAnimation =
         Tween<double>(begin: 0, end: progressValue).animate(_scoreController)
           ..addListener(() {
@@ -52,13 +53,12 @@ class _ProgressCircleState extends State<ProgressCircle>
   @override
   Widget build(BuildContext context) {
     return Center(
-      
       child: CircularPercentIndicator(
         animation: true,
         animateFromLastPercent: true,
         radius: radius,
         lineWidth: 50,
-        progressColor: Colors.green,
+        progressColor: ColorConfigurer.getColor(displayedScore),
         backgroundColor: Color.fromARGB(108, 18, 131, 162),
         circularStrokeCap: CircularStrokeCap.round,
         percent: displayedScore,
