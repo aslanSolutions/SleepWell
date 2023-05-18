@@ -64,18 +64,6 @@ To get started with your GitLab project for Arduino and Flutter, follow these st
 5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up [mosquitto](https://hub.docker.com/_/eclipse-mosquitto) to enable communication within the project.
 
 
-
-
-
-
-Here are steps to getting started
-
-1. You should setup both of Arduino and Flutter framework. (Page is coming)
-2. To upload code to the Wio Seeed Terminal using Arduino IDE, it is necessary to have the terminal device. Additionally, there will be several sensors connected to the terminal that can be used.(Page is coming)
-3. Git must be installed on the device before using GitLab.(Page is coming)
-4. It is required to clone the repository to work on it. (Page is coming)
-5. The project requires the use of MQTT protocol, and the developers have used mosquitto for this purpose.(Page is coming)
-
 ## Usage <a name = "usage"></a>
 As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
 
