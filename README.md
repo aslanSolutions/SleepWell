@@ -59,9 +59,9 @@ To get started with your GitLab project for Arduino and Flutter, follow these st
 
 3. Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" Git</a> : Before utilizing GitLab, ensure that Git is installed on your device. 
 
-4. Clone <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository" </a> the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. 
+4. <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository" Clone</a> the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. 
 
-5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up mosquitto <a href="https://hub.docker.com/_/eclipse-mosquitto" <a/> to enable communication within the project.
+5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up <a href="https://hub.docker.com/_/eclipse-mosquitto" mosquitto <a/> to enable communication within the project.
 
 
 
