@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="500" height="500" src="https://i.imgur.com/26s7duQ.png">
+  <img width="400" height="400" src="https://i.imgur.com/26s7duQ.png">
   <h3 align="center">Sleep Well</h3>
 </p>
 
