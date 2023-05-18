@@ -10,7 +10,7 @@ import 'package:sleep_well/Back-End/Converter.dart';
 
 class BrokerConnection {
   final String TOPIC = 'wio/values';
-  final String LOCAL_HOST = '192.168.0.102';
+  final String LOCAL_HOST = '192.168.0.103';
   final int PORT = 8081; //Connecting port for mqtt-dart is 8081
   final CLIENT_ID = 'Group-1';
 
