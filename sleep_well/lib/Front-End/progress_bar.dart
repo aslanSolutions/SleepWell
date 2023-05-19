@@ -1,24 +1,27 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:sleep_well/Front-End/values.dart';
 import './color_configurer.dart';
 
 class ExpandableProgressBar extends StatefulWidget {
-  const ExpandableProgressBar(this.icon, {super.key});
+  const ExpandableProgressBar(this.icon, this.sensorValue, {super.key});
   final String icon;
+  final double sensorValue;
 
   @override
   // ignore: library_private_types_in_public_api, no_logic_in_create_state
   _ExpandableProgressBarState createState() =>
       // ignore: no_logic_in_create_state
-      _ExpandableProgressBarState(icon);
+      _ExpandableProgressBarState(icon, sensorValue);
 }
 
 class _ExpandableProgressBarState extends State<ExpandableProgressBar>
     with SingleTickerProviderStateMixin {
-  _ExpandableProgressBarState(this.icon);
+  _ExpandableProgressBarState(this.icon, this.sensorValue);
 
   Color color = ColorConfigurer.getColor(0.8);
   final String icon;
+  double sensorValue;
 
   late AnimationController _animationController;
   bool _isExpanded = false;
@@ -79,7 +82,7 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
                         backgroundColor:
                             const Color.fromARGB(255, 254, 252, 251)
                                 .withOpacity(0.6),
-                        value: 0.82,
+                        value: sensorValue,
                         valueColor: const AlwaysStoppedAnimation<Color>(
                             Color.fromARGB(255, 3, 64, 120)),
                       ),

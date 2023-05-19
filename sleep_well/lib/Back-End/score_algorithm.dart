@@ -1,5 +1,6 @@
 import './Converter.dart';
 import './percentage.dart';
+import 'package:sleep_well/Json/scannerJson.dart';
 
 Converter converter = Converter();
 double result = 0;
@@ -85,6 +86,11 @@ class ScoreAlgorithm {
         (calculateHumidity() / 4) +
         (calculateLoudness() / 4) +
         (calculateTemperature() / 4));
+    DateTime currentDate = DateTime.now();
+    writeDataToJsonFile(
+        DateTime(currentDate.year, currentDate.month, currentDate.day),
+        percent);
+    //readDataFromJsonFile();
     return percent;
   }
 }
