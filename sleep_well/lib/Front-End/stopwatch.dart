@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
+// this class was implemented through a package, the code was tweaked alot but was mostly taken from a premade version
 class CountUpTimerPage extends StatefulWidget {
   final void Function(String) onTimeRecorded;
 

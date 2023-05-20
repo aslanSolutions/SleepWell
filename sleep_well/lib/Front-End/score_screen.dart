@@ -26,7 +26,10 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   double paddingSize = 10;
   double values = ScoreAlgorithm().totalPercent() / 100;
-
+  double light = ScoreAlgorithm().calcluateLight() / 100;
+  double loud = ScoreAlgorithm().calculateLoudness() / 100;
+  double temp = ScoreAlgorithm().calculateTemperature() / 100;
+  double humidity = ScoreAlgorithm().calculateHumidity() / 100;
   Container buildBackground() {
     return Container(
       decoration: const BoxDecoration(

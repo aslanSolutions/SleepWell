@@ -99,7 +99,7 @@ class BrokerConnection {
 
     //Sleeping for a while
     print('Sleeping....');
-    await MqttUtilities.asyncSleep(100);
+    await MqttUtilities.asyncSleep(60);
 
     //unsubscribe and exit gracefully
     print('Unsubscribing');

@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:sleep_well/Front-End/values.dart';
 import './color_configurer.dart';
 
 class ExpandableProgressBar extends StatefulWidget {

@@ -1,9 +1,10 @@
-<div style="display: flex; justify-content: center;">
-  <img src="https://i.imgur.com/26s7duQ.png" alt="Project logo" style="width: 300px; height: 200px;">
-</div>
+
+<p align="center">
+  <img width="400" height="400" src="https://i.imgur.com/26s7duQ.png">
+  <h3 align="center">Sleep Well</h3>
+</p>
 
 
-<h3 align="center">Sleep Well</h3>
 
 <div align="center">
 
