@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 onTap: () {
                   switchToScore();
                 },
-                child: const ProgressCircle(0.70, 150),
+                child: const ProgressCircle(0.89, 150),
               ),
             ),
             const SizedBox(
