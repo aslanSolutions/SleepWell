@@ -69,6 +69,7 @@ class _ScreenControllerState extends State<ScreenController> {
   @override
   Widget build(context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
