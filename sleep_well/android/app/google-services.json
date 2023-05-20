@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "914490682777",
+    "project_id": "sleep-well-f3279",
+    "storage_bucket": "sleep-well-f3279.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914490682777:android:4c12bb96f06d11fbb5b708",
+        "android_client_info": {
+          "package_name": "com.example.sleep_well"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914490682777-g813hvbdp590kr1e5k42pf9uln7vonek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaaHNevWwr74EVTKTpkh4op5LxJ2OwUoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914490682777-g813hvbdp590kr1e5k42pf9uln7vonek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

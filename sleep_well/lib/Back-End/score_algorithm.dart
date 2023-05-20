@@ -1,6 +1,8 @@
+import 'package:sleep_well/Service/FirbaseCrud.dart';
+import 'package:sleep_well/Service/Response.dart';
+import 'package:intl/intl.dart';
 import './Converter.dart';
 import './percentage.dart';
-import 'package:sleep_well/Json/scannerJson.dart';
 
 Converter converter = Converter();
 double result = 0;
@@ -87,10 +89,10 @@ class ScoreAlgorithm {
         (calculateLoudness() / 4) +
         (calculateTemperature() / 4));
     DateTime currentDate = DateTime.now();
-    writeDataToJsonFile(
-        DateTime(currentDate.year, currentDate.month, currentDate.day),
-        percent);
-    //readDataFromJsonFile();
+    DateFormat formatter = DateFormat('yyyy-MM-dd');
+    String formattedDate = formatter.format(currentDate);
+    FirebaseCrud.addValue(day: formattedDate, value: percent);
+    FirebaseCrud.readValue();
     return percent;
   }
 }
