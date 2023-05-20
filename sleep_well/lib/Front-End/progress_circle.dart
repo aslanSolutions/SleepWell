@@ -46,10 +46,6 @@ class _ProgressCircleState extends State<ProgressCircle>
     super.dispose();
   }
 
-  // the circle should change colors
-  // todo assigned to Qutaiba
-  
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -59,7 +55,7 @@ class _ProgressCircleState extends State<ProgressCircle>
         radius: radius,
         lineWidth: 50,
         progressColor: ColorConfigurer.getColor(displayedScore),
-        backgroundColor: Color.fromARGB(108, 18, 131, 162),
+        backgroundColor: const Color.fromARGB(108, 18, 131, 162),
         circularStrokeCap: CircularStrokeCap.round,
         percent: displayedScore,
         center: Center(
