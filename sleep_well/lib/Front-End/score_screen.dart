@@ -25,7 +25,10 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   double paddingSize = 10;
   double values = ScoreAlgorithm().totalPercent() / 100;
-
+  double light = ScoreAlgorithm().calcluateLight() / 100;
+  double loud = ScoreAlgorithm().calculateLoudness() / 100;
+  double temp = ScoreAlgorithm().calculateTemperature() / 100;
+  double humidity = ScoreAlgorithm().calculateHumidity() / 100;
   Container buildBackground() {
     return Container(
       decoration: const BoxDecoration(
@@ -117,7 +120,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: const ExpandableProgressBar(tempIcon),
+                        child: ExpandableProgressBar(tempIcon, temp),
                       ),
                     ),
                   ),
@@ -132,7 +135,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: const ExpandableProgressBar(lightIcon),
+                        child: ExpandableProgressBar(lightIcon, light),
                       ),
                     ),
                   ),
@@ -147,7 +150,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: const ExpandableProgressBar(loudIcon),
+                        child: ExpandableProgressBar(loudIcon, loud),
                       ),
                     ),
                   ),
@@ -162,7 +165,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: const ExpandableProgressBar(humidityIcon),
+                        child: ExpandableProgressBar(humidityIcon, humidity),
                       ),
                     ),
                   ),
