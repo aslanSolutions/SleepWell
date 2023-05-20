@@ -4,24 +4,27 @@ import 'package:sleep_well/Front-End/values.dart';
 import './color_configurer.dart';
 
 class ExpandableProgressBar extends StatefulWidget {
-  const ExpandableProgressBar(this.icon, this.sensorValue, {super.key});
+  const ExpandableProgressBar(this.icon, this.message, this.values,
+      {super.key});
   final String icon;
-  final double sensorValue;
+  final String message;
+  final double values;
 
   @override
   // ignore: library_private_types_in_public_api, no_logic_in_create_state
   _ExpandableProgressBarState createState() =>
       // ignore: no_logic_in_create_state
-      _ExpandableProgressBarState(icon, sensorValue);
+      _ExpandableProgressBarState(icon, message, values);
 }
 
 class _ExpandableProgressBarState extends State<ExpandableProgressBar>
     with SingleTickerProviderStateMixin {
-  _ExpandableProgressBarState(this.icon, this.sensorValue);
+  _ExpandableProgressBarState(this.icon, this.message, this.values);
 
   Color color = ColorConfigurer.getColor(0.8);
   final String icon;
-  double sensorValue;
+  final String message;
+  final double values;
 
   late AnimationController _animationController;
   bool _isExpanded = false;
@@ -82,7 +85,7 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
                         backgroundColor:
                             const Color.fromARGB(255, 254, 252, 251)
                                 .withOpacity(0.6),
-                        value: sensorValue,
+                        value: values,
                         valueColor: const AlwaysStoppedAnimation<Color>(
                             Color.fromARGB(255, 3, 64, 120)),
                       ),
@@ -121,10 +124,10 @@ class _ExpandableProgressBarState extends State<ExpandableProgressBar>
                     filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      color: Color.fromARGB(255, 254, 252, 251),
-                      child: const Text(
-                        'This text will contain information about the score of this indivuall sensor and will give some suggestions to make it better',
-                        style: TextStyle(
+                      color: const Color.fromARGB(255, 254, 252, 251),
+                      child: Text(
+                        message,
+                        style: const TextStyle(
                           fontSize: 18,
                           color: Color.fromARGB(255, 18, 131, 162),
                         ),

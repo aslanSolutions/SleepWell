@@ -2,8 +2,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import './progress_circle.dart';
 import './progress_bar.dart';
-import './stopwatch.dart';
 import 'package:sleep_well/Back-End/score_algorithm.dart';
+
+import 'feed_back_message.dart';
 
 class ScoreScreen extends StatefulWidget {
   ScoreScreen(this.goBack, {super.key});
@@ -40,6 +41,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
     );
   }
 
+  @override
   Widget build(context) {
     return Stack(
       children: [
@@ -100,9 +102,9 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: const Text(
-                          "Your overal sleep invairoment was good \nYou can see more details down below",
-                          style: TextStyle(
+                        child: Text(
+                          FeedbackMessage.getOverallMessage(values),
+                          style: const TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255),
                               fontSize: 20),
                         ),
@@ -120,7 +122,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: ExpandableProgressBar(tempIcon, temp),
+                        child: ExpandableProgressBar(tempIcon,
+                            FeedbackMessage.getTempMessage(values), values),
                       ),
                     ),
                   ),
@@ -135,7 +138,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: ExpandableProgressBar(lightIcon, light),
+                        child: ExpandableProgressBar(lightIcon,
+                            FeedbackMessage.getLightMessage(values), values),
                       ),
                     ),
                   ),
@@ -150,7 +154,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: ExpandableProgressBar(loudIcon, loud),
+                        child: ExpandableProgressBar(loudIcon,
+                            FeedbackMessage.getLoudnessMessage(values), values),
                       ),
                     ),
                   ),
@@ -165,7 +170,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         color: const Color.fromARGB(255, 18, 131, 162),
-                        child: ExpandableProgressBar(humidityIcon, humidity),
+                        child: ExpandableProgressBar(humidityIcon,
+                            FeedbackMessage.getHumidityMessage(values), values),
                       ),
                     ),
                   ),
