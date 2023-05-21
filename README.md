@@ -101,7 +101,7 @@ I was in charge of creating the sleep screen functionality, ensuring that our us
 I created the initial sleep well design , as I focused on creating an appealing interface.
 Furthermore, I was in charge of developing the logo for our sleep well application.
 In addition, I prepared our marketing video which successfully demonstrate the capabilities and benefits of our project to stakeholders and potential consumers.
-4. @qutaiba: 
+4. @qutaiba: I worked on several tasks for the Wio project. I implemented the light sensor code for the GUI, worked on the sleep log screen, redesigned some parts of the app, fixed bugs and wrapped up some end losses. Additionally, I worked on documentation for the GitLab.
 5. @elhasan: 
 6. @nawrask: For the WIO, I worked on the screen so it displays 5 different screens and implementing the temperature sensor. For the app i worked on the log screen and the log screen controller. Polished and cleaned up some classes. Finally, i reviewd the code implementation for some of the issues we had during this project.
 
