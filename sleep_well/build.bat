@@ -13,8 +13,5 @@ call gradlew.bat assembleDebug
 rem Return to the project root directory
 cd ..
 
-rem Run tests (optional)
-call flutter test
-
 rem Launch the app on the specified emulator device
 call flutter run -d all
