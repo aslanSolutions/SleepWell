@@ -95,7 +95,7 @@ Thanks again, everyone!
 ## Authors and contributions <a name = "authors"></a>
 Here is a short list of all the members and their contribution to this project:
 1. @josefab: I did thourough research in flutter (udemy course) before starting with the implementation process. After coming up with ideas i started with the layout build. We then started working on the gui. I manily participated in creating the homescreen (and the widgets around it) and a big part of the sleep log screen. I also worked on the logic side of the app with the score alogithm. 
-2. @muhmmad: 
+2. @muhmmad: implementing the sound sensor for the Wio device. Additionally, I added download and installation instructions to the wiki page, created the score screen and loading screen, and refactored the code to adhere to SOLID principles. These enhancements significantly improve the code's functionality, readability, and usability.
 3. @yousefab: 
 I was in charge of creating the sleep screen functionality, ensuring that our users have a seamless and user-friendly experience.
 I created the initial sleep well design , as I focused on creating an appealing interface.
