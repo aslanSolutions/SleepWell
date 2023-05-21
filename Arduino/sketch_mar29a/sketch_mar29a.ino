@@ -1,5 +1,7 @@
 #include "DHT.h"
 #include "TFT_eSPI.h"
+#include "WiFi.h"
+
 
 #define DHTPIN 0
 #define DHTTYPE DHT11
@@ -11,7 +13,45 @@ int joyStick = 0;
 
 int exp_size = 2881;
 
+//Wifi information
+const char* ssid = "SEM"; // WiFi Name
+const char* password = "sem2025gu";  // WiFi Password 
+
+//Wifi
+WiFiClient espClient;
+
 TFT_eSPI tft;
+
+
+void setup_wifi() {
+
+  delay(10);
+
+  tft.setTextSize(2);
+  tft.setCursor((320 - tft.textWidth("Connecting to Wi-Fi..")) / 2, 120);
+  tft.print("Connecting to Wi-Fi..");
+
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password); // Connecting WiFi
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+
+  tft.fillScreen(TFT_BLACK);
+  tft.setCursor((320 - tft.textWidth("Connected!")) / 2, 120);
+  tft.print("Connected!");
+
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP()); // Display Local IP Address
+}
+
 
 void setup() {
   
@@ -30,6 +70,8 @@ void setup() {
   pinMode(WIO_5S_RIGHT, INPUT);
 
   dht.begin();
+
+  setup_wifi();
   
 }
 
