@@ -99,7 +99,7 @@ Here is a short list of all the members and their contribution to this project:
 3. @yousefab: 
 4. @qutaiba: 
 5. @elhasan: 
-6. @nawrask: For the WIO, I worked on the screen so it displays 5 different screens and implementing the temperature sensor. For the android app i worked on the display screen & log screen. Polished and cleaned up some classes. Finally, i reviewd the code implementation for issues: #
+6. @nawrask: For the WIO, I worked on the screen so it displays 5 different screens and implementing the temperature sensor. For the android app i worked on the display screen & log screen. Polished and cleaned up some classes. Finally, i reviewd the code implementation for some of the issues we had during this project.
 
 Information about our amazing team and the team contract can be found <a href= "https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Team"> here</a>
 
