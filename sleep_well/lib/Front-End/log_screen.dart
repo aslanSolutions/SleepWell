@@ -5,14 +5,38 @@ import './values.dart';
 import 'package:flutter/material.dart';
 import './screen_controller.dart';
 
-class LogScreen extends StatelessWidget {
-  const LogScreen(this.switchToScore, this.goBack, {super.key});
+class LogScreen extends StatefulWidget {
+  const LogScreen(this.switchToScore, this.goBack, {Key? key})
+      : super(key: key);
   final void Function() switchToScore;
   final void Function() goBack;
 
   @override
+  _LogScreenState createState() => _LogScreenState();
+}
+
+class _LogScreenState extends State<LogScreen> {
+  late Future<List<Values>> valuesFuture;
+  List<Values> values = [];
+
+  @override
+  void initState() {
+    super.initState();
+    valuesFuture = getValues();
+    fetchValues();
+  }
+
+  Future<void> fetchValues() async {
+    final fetchedValues = await valuesFuture;
+    setState(() {
+      values = fetchedValues;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         const SizedBox(
@@ -35,7 +59,7 @@ class LogScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_ios_new),
                   iconSize: 20,
                   color: const Color.fromARGB(255, 0, 0, 0),
-                  onPressed: goBack,
+                  onPressed: widget.goBack,
                 ),
               ),
             ),
@@ -59,7 +83,7 @@ class LogScreen extends StatelessWidget {
           child: LogScreenController(values),
         ),
         Expanded(
-          child: LogScreen2(values, switchToScore),
+          child: LogScreen2(values, widget.switchToScore),
         ),
       ],
     );
