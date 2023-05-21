@@ -1,5 +1,4 @@
 import 'package:sleep_well/Service/FirbaseCrud.dart';
-import 'package:sleep_well/Service/Response.dart';
 import 'package:intl/intl.dart';
 import './Converter.dart';
 import './percentage.dart';
@@ -89,10 +88,7 @@ class ScoreAlgorithm {
         (calculateLoudness() / 4) +
         (calculateTemperature() / 4));
     DateTime currentDate = DateTime.now();
-    DateFormat formatter = DateFormat('yyyy-MM-dd');
-    String formattedDate = formatter.format(currentDate);
-    FirebaseCrud.addValue(day: formattedDate, value: percent);
-    FirebaseCrud.readValue();
+    FirebaseCrud.addValue(date: currentDate, value: percent);
     return percent;
   }
 }
