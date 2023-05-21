@@ -97,6 +97,10 @@ Here is a short list of all the members and their contribution to this project:
 1. @josefab: I did thourough research in flutter (udemy course) before starting with the implementation process. After coming up with ideas i started with the layout build. We then started working on the gui. I manily participated in creating the homescreen (and the widgets around it) and a big part of the sleep log screen. I also worked on the logic side of the app with the score alogithm. 
 2. @muhmmad: 
 3. @yousefab: 
+I was responsible for implementing the sleep screen feature, ensuring a smooth and user-friendly experience for our application users.
+I designed the initial layout and visual elements for the sleep screen, focusing on creating an intuitive and visually appealing interface.
+In addition, I took the lead in designing the logo for our sleep well application, carefully selecting elements that represented its purpose and brand identity.
+Furthermore, I created a compelling presentation video that effectively showcased the features and benefits of our project to stakeholders and potential users.
 4. @qutaiba: 
 5. @elhasan: 
 6. @nawrask: For the WIO, I worked on the screen so it displays 5 different screens and implementing the temperature sensor. For the app i worked on the log screen and the log screen controller. Polished and cleaned up some classes. Finally, i reviewd the code implementation for some of the issues we had during this project.
