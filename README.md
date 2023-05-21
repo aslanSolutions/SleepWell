@@ -9,7 +9,7 @@
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/issues)
+  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/issues/23)
   [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/branches)
  
 </div>
