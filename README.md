@@ -33,7 +33,7 @@
 - [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Acknowledgments](#acknowledgement)
-- [Authors](#authors)
+- [Authors and Contributions](#authors)
 
 
 ## 🧐 About <a name = "about"></a>
@@ -94,12 +94,12 @@ Thanks again, everyone!
 
 ## Authors and contributions <a name = "authors"></a>
 Here is a short list of all the members and their contribution to this project:
-1. @josefab:
+1. @josefab: 
 2. @muhmmad: 
 3. @yousefab: 
 4. @qutaiba: 
-5. @elhasan:
-6. @nawrask: 
+5. @elhasan: 
+6. @nawrask: For the WIO, I worked on the screen so it displays 5 different screens and implementing the temperature sensor. For the android app i worked on the display screen & log screen. Polished and cleaned up some classes. Finally, i reviewd the code implementation for issues: #
 
 Information about our amazing team and the team contract can be found <a href= "https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Team"> here</a>
 
