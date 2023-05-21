@@ -98,7 +98,7 @@ Here is a short list of all the members and their contribution to this project:
 2. @muhmmad: 
 3. @yousefab: 
 I was in charge of creating the sleep screen functionality, ensuring that our users have a seamless and user-friendly experience.
-I created the initial sleep well design , as I were focused on creating a appealing interface.
+I created the initial sleep well design , as I focused on creating an appealing interface.
 Furthermore, I was in charge of developing the logo for our sleep well application.
 In addition, I prepared a captivating film which successfully demonstrated the capabilities and benefits of our project to stakeholders and potential consumers.
 4. @qutaiba: 
