@@ -94,7 +94,7 @@ Thanks again, everyone!
 
 ## Authors and contributions <a name = "authors"></a>
 Here is a short list of all the members and their contribution to this project:
-1. @josefab: 
+1. @josefab: I did thourough research in flutter (udemy course) before starting with the implementation process. After coming up with ideas i started with the layout build. We then started working on the gui. I manily participated in creating the homescreen (and the widgets around it) and a big part of the sleep log screen. I also worked on the logic side of the app with the score alogithm. 
 2. @muhmmad: 
 3. @yousefab: 
 4. @qutaiba: 
