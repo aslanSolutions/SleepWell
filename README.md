@@ -64,6 +64,11 @@ To get started with your GitLab project for Arduino and Flutter, follow these st
 
 5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up [mosquitto](https://hub.docker.com/_/eclipse-mosquitto) to enable communication within the project.
 
+6. Run project automated: You need to open your terminal, and open the path of the flutter project, 
+`C:\...\sleep-well\sleep_well` 
+then write command
+`bulid.bat`
+
 
 ## Usage <a name = "usage"></a>
 As metioned above, the project measures environmental variables during sleep to optimize sleep conditions and has potential applications in research. It provides a score indicating whether the sleeping environment was favorable or unfavorable, which can be used to adjust conditions to improve sleep quality. By analyzing the data collected, patterns and trends can be iSdentified, contributing to a better understanding of factors that influence sleep quality.
