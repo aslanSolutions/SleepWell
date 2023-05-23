@@ -15,7 +15,7 @@ class ScoreAlgorithm {
   //Calculating the light percent
   double calcluateLight() {
     List<int> lightScoreList = converter.getLight();
-    total = 7.0;
+    total = 6.0;
     for (int i = 0; i < lightScoreList.length - 1; i++) {
       result = result + lightScoreList[i];
       counter = i;
@@ -24,8 +24,6 @@ class ScoreAlgorithm {
 
     if (result > total) {
       percent = Percentage().calculator2(result, total);
-    } else {
-      percent = Percentage().calculator1(result, total);
     }
     return percent;
   }
@@ -58,8 +56,6 @@ class ScoreAlgorithm {
 
     if (result > total) {
       percent = Percentage().calculator2(result, total);
-    } else {
-      percent = Percentage().calculator1(result, total);
     }
     return percent;
   }
@@ -67,7 +63,7 @@ class ScoreAlgorithm {
   //Calculating the humidity percent
   double calculateHumidity() {
     List<int> humidityScoreList = converter.getHumidity();
-    total = 50;
+    total = 45;
     for (int i = 0; i < humidityScoreList.length - 1; i++) {
       result = result + humidityScoreList[i];
     }
