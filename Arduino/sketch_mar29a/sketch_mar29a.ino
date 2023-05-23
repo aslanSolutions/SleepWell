@@ -1,6 +1,7 @@
 #include "DHT.h"
 #include "TFT_eSPI.h"
 #include "WiFi.h"
+#include "PubSubClient.h"
 
 
 #define DHTPIN 0
@@ -17,8 +18,16 @@ int exp_size = 2881;
 const char* ssid = "SEM"; // WiFi Name
 const char* password = "sem2025gu";  // WiFi Password 
 
-//Wifi
+//Server information (MQTT)
+const char* server = ""; // Set your local ip here
+
+// Broker topics to sub. and pub. 
+const char* TOPIC_sub = "wio/terminal";
+const char* TOPIC_pub_connection = "sleep/app";
+
+//Wifi Mqtt clients
 WiFiClient espClient;
+PubSubClient client(espClient);
 
 TFT_eSPI tft;
 
@@ -52,6 +61,44 @@ void setup_wifi() {
   Serial.println(WiFi.localIP()); // Display Local IP Address
 }
 
+// Broker reconnecting
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Create a random client ID
+    String clientId = "WioTerminal";
+    // Attempt to connect
+    if (client.connect(clientId.c_str())) {
+      Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish(TOPIC_pub_connection, "Connected");
+      Serial.println("Published connection message ");
+      // ... and resubscribe
+      client.subscribe(TOPIC_sub);
+      Serial.print("Subcribed to: ");
+      Serial.println(TOPIC_sub);
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+// Client callback function
+void callback(char* topic, byte* payload, unsigned int length) {
+  tft.fillScreen(TFT_BLACK);
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  // process payload and convert it to a string
+  Serial.println();
+
+}
+
 
 void setup() {
   
@@ -72,6 +119,9 @@ void setup() {
   dht.begin();
 
   setup_wifi();
+
+  client.setServer(server, 8081);
+  client.setCallback(callback);
   
 }
 
@@ -85,6 +135,17 @@ void loop() {
   if(counter > exp_size){
     return;
   }
+
+  //Reconnecting
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  client.loop();
+
+  char payload[100];
+  snprintf(payload, sizeof(payload), "%d, %d, %d, %d", light, sound, temperature, humidity);
+  client.publish(TOPIC_pub_connection, payload);
 
   tft.fillScreen(TFT_BLACK);
   tft.setTextSize(2);
