@@ -98,7 +98,7 @@ To get started with your GitLab project for Arduino and Flutter, follow these st
 
 4. [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) the repository: To begin working on the project, clone the repository to your local machine. This will create a local copy of the project that you can modify and contribute to. 
 
-5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up [mosquitto](https://hub.docker.com/_/eclipse-mosquitto) to enable communication within the project.
+5. Utilize MQTT protocol: The project makes use of the MQTT protocol, and the developers have chosen to use mosquitto for this purpose. Familiarize yourself with MQTT and set up [mosquitto](https://git.chalmers.se/courses/dit113/2023/group-1/sleep-well/-/wikis/Instruction#mqtt-configuration) to enable communication within the project.
 
 6. Run project automated: You need to open your terminal, and open the path of the flutter project, 
 `C:\...\sleep-well\sleep_well` 
