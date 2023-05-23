@@ -50,9 +50,10 @@ Our project aims to leverage the Wio Terminal, an Arduino-based device, to monit
 * User-friendly mobile application interface.
 
 ##  User Manual <a name = "user_manual"></a>
-The button usage on the Wio terminal itself: 
+Wio:
 <br>
-Wio: There are 5 different buttons, making the screen view different things:<br>
+
+There are 5 different buttons, making the screen view different things:<br>
 Up: Light sensor information only.<br>
 Left: Loudness sensor information only.<br>
 Down: Temperature sensor information only.<br>
