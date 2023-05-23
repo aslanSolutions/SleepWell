@@ -26,6 +26,7 @@
 - [About](#about)
 - [Features](#Features)
 - [Getting Started](#getting_started)
+- [User Manual](#user_manual)
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Prerequisites](#Prerequisites)
@@ -48,6 +49,38 @@ Our project aims to leverage the Wio Terminal, an Arduino-based device, to monit
 * Notifications and alerts for abnormal sleep conditions.
 * User-friendly mobile application interface.
 
+## ⌨️ User Manual <a name = "user_manual"></a>
+The button usage on the Wio terminal itself: 
+
+Wio:There are 5 different buttons, making the screen view different things:
+Up: Light sensor information only.
+Left: Loudness sensor information only.
+Down: Temperature sensor information only.
+Right: Humidity sensor information only.
+Press: All sensor values at the same time (Home Screen).
+
+
+<p align="center">
+  <img width="300" height="200" src="https://cdn.cnx-software.com/wp-content/uploads/2022/09/Wio-Terminal-Joystick.png?lossy=0&strip=none&ssl=1">
+</p>
+
+App:
+
+- Home Screen: From here, you can either start taking a nap by clicking on the bed, look at the previous days data by clicking on the calendar icon on the right side of the screen.
+<p align="center">
+  <img width="200" height="450" src="https://cdn.discordapp.com/attachments/1088094287994040412/1109889244912169010/Screenshot_2023-05-21-19-00-29-06_08947ea61cab213e023e5a75e69ec1b6.jpg">
+</p>
+
+
+- log screen: There are two buttons, top left of the screen to go back to the Home Screen and clicking on "More Details" for everyday gives more indepth information about that certain day.
+<p align="center">
+  <img width="200" height="450" src="https://cdn.discordapp.com/attachments/1088094287994040412/1109889244631138344/Screenshot_2023-05-21-19-00-35-57_08947ea61cab213e023e5a75e69ec1b6.jpg">
+</p>
+
+- Sleep Screen: Once you are here, the Wio is recording and sending values to the App. You can stop this and end the session by sliding the slide. That way, ending the napping session. 
+<p align="center">
+  <img width="200" height="450" src="https://cdn.discordapp.com/attachments/1031887940663652362/1110577638881378345/Screenshot_2023-05-23-16-38-30-00_08947ea61cab213e023e5a75e69ec1b6.jpg">
+</p>
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 []()
